@@ -14,11 +14,7 @@ release = "2025"
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = [
-    "myst_parser",
-    "sphinx.ext.mathjax",
-    "sphinx_copybutton"
-    ]
+extensions = ["myst_parser", "sphinx.ext.mathjax", "sphinx_copybutton"]
 
 myst_enable_extensions = [
     "colon_fence",
@@ -29,7 +25,7 @@ myst_enable_extensions = [
 myst_heading_anchors = 3
 
 # excludes all line numbers, prompt characters, and console outputs
-copybutton_exclude = '.linenos, .gp, .go'
+copybutton_exclude = ".linenos, .gp, .go"
 
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
@@ -37,26 +33,23 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = "sphinx_material"
+html_theme = "furo"
 html_static_path = ["_static"]
+html_css_files = [
+    "custom.css",
+]
 
 html_title = "Math 495R EMC2 Python Labs"
 
-html_sidebars = {
-    "**": [
-        "logo-text.html",
-        "globaltoc.html",
-        "localtoc.html",
-        "searchbox.html",
-    ]
-}
+# html_sidebars = {
+#     "**": [
+#         "logo-text.html",
+#         "globaltoc.html",
+#         "localtoc.html",
+#         "searchbox.html",
+#     ]
+# }
 
-html_theme_options = {"nav_title": "Fall EMC2 Labs"}
+# html_theme_options = {"nav_title": "Fall EMC2 Labs"}
 
 suppress_warnings = ["config.cache"]
-
-
-# Allows for centering of figures.
-# If things get messed up, this would be a good place to check.
-def setup(app):
-    app.add_css_file("custom.css")
