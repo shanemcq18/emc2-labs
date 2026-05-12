@@ -1,0 +1,218 @@
+# Lab 12: Recursion
+
+Recursion is an important technique used in computer programming and is very similar to the principle of mathematical induction. To understand this concept, consider the following example:
+
+You are at your favorite restaurant on a Friday night and the line has gone out the door into the parking lot. You want to figure out how many people are ahead of you before you try a different restaurant.
+You could walk down the entire line and count each person one-by-one, but then you would lose your spot and perhaps even begin to feel bad about yourself for going out to eat alone on a Friday night.
+To avoid this effort and embarrassment, another option would be to ask the person ahead of you how many people are ahead of them. Then they ask the person ahead of them the same question, and the pattern continues all the way down the line until you reach the person at the counter. That person says there are 0 people in front of them.
+This message is then passed up the line towards you with each person adding one to the count.
+
+This illustrates a recursive method for solving a problem. You delegated subtasks to people ahead of you and each person provided a little bit of information at each step. We can think of this as a chain of calls, where each person is a function that calls the next person in line.
+
+Recursion is generally implemented in functions in computer programming. If we were to write pseudocode for our restaurant example, it may look something like this:
+
+```python
+def line_count(person):
+   if (persons_position == 1):
+      return 0
+   else:
+      return 1 + line_count(person_ahead)
+```
+This function essentially asks, "Is the current person the first in line?". If they aren't, then it will go to the person ahead of them, and so on and so forth. Each time this happens, we are adding `1` to our count and returning it.
+
+If we had this line:
+
+```console
+You -> Jeff -> Joe -> Peter -> James
+```
+and we called `line_count` on `You`, our function would make calls like this:
+
+```console
+line_count(You) = 1 + line_count(Jeff)
+                = 1 + (1 + line_count(Joe))
+                = 1 + (1 + (1 + line_count(Peter)))
+                = 1 + (1 + (1 + (1 + line_count(James))))
+```
+At which point, `line_count` would see that the position of `James` is `1`. So it would `return 0` and the process would continue like this:
+
+```console
+= 1 + (1 + (1 + (1 + line_count(James))))
+= 1 + (1 + (1 + (1 + 0)))
+= 1 + (1 + (1 + 1))
+= 1 + (1 + 2)
+= 1 + 3
+= 4
+```
+You may have noticed that we could also have used a `for` loop to solve this problem. In theory, every problem that can be done with recursion can be done with iteration. The pseudocode for an iterative `line_count` would look like this:
+
+```python
+def line_count_iter(person):
+   count = 0
+   while person_ahead is not None:   # while there is a next person
+      count = count + 1
+      person_ahead = person_ahead_ahead   # set a new person_ahead to the person after person_ahead
+   return count
+```
+The benefit to recursion is that it makes the code simpler. The iterative version of `line_count` is a little unintuitive, while the recursive version is fairly easy to understand.
+
+Hopefully you can see that recursion and induction are cousin concepts. A recursive function is one that calls itself, and proof by induction uses `P(n)` to prove `P(n+1)`.
+
+## Writing a Recursive Function
+
+In order to create a valid recursive function, three things must be present:
+
+#. Base Case: What is the solution to the smallest problem?
+#. Recursive Case: How do we break up our problem into smaller problems? (This can also be thought of as the inductive step.)
+#. Conditional Statement: When do we stop? How we know if we are at the base case or the recursive case?
+
+For `line_count`, the base case is `return 0` for when a person is at the front of the line. The recursive case is `return 1 + line_count(person_ahead)` where we add one person in our return chain and call `line_count` on the next person. The conditional statement is `if (persons_position == 1):` which checks if we are at the front of the line or not.
+
+:::{warning}
+The base case is crucial! Without a base case, recursive functions will go on forever until you get a Stack Overflow error.
+:::
+Consider another piece of code that computes the sum of all the integers from `1` to `n`:
+
+```python
+def recursive_sum(n):
+    if n==1:
+        return 1
+    else:
+        return n + recursive_sum(n-1)
+```
+## Task 1
+
+Turn to a neighbor and discuss which line is the base case, recursive case, and conditional statement.
+
+Write out the different calls `recursive_sum(5)` will make. This should look something like when we called `line_count` on `You`.
+
+:::{admonition} "If all you have is a hammer everything looks like a nail." - Abraham Maslow
+Recursion is perfectly suited for certain situations, but be careful to not overuse it. Generally speaking, recursion works well for divide and conquer problems, data in tree-based structures, and any time a problem can be divided in to smaller subproblems. Iteration can then be used for everything else.
+
+```{list-table}
+:widths: 33 34 33
+:header-rows: 1
+
+* - Feature
+  - Recursion
+  - Iteration
+* - **Implementation**
+  - Function calling itself
+  - Loops
+* - **Termination**
+  - Defined in recursive function
+  - Defined in loop's definition
+* - **Size of Code**
+  - Small
+  - Large
+* - **Speed**
+  - Slow
+  - Fast
+* - **Time Complexity**
+  - High
+  - Low
+* - **Memory**
+  - Uses more memory
+  - Uses less memory
+
+```
+If you want something to be fast and efficient, but look messy, use iteration. If those things aren't important and you want pretty code, use recursion.
+
+Recursion is a very difficult topic to understand when first starting out, so don't worry if you have trouble grasping it.
+:::
+## Task 2
+
+Recall that the factorial function is defined on nonnegative integers as
+
+```{math}
+n! = 
+\begin{cases}
+   1 & \text{ if } n=0, \\
+   n \cdot (n-1)! & \text{ if } n\geq 1.
+\end{cases}
+```
+Write a function `fac(n)` that computes `n!` recursively. Your program should raise a `ValueError` if the input is not a nonnegative integer.
+
+
+```python
+>>> fac(7)
+5040
+>>> fac(30)
+265252859812191058636308480000000
+```
+
+## Task 3
+
+Write a function `sum_digits(n)` that will sum up all the digits in a number.
+
+```python
+>>> sum_digits(1)
+1
+>>> sum_digits(123456)
+21
+```
+
+:::{hint}
+Remember `a % b` returns the remainder after integer division, and `//` (floor division) removes the remainder after division.
+:::
+## Task 4
+
+The Fibonacci numbers are a collection of natural numbers labeled
+
+```{math}
+F_1, F_2, F_3, \ldots
+```
+and defined by the rule
+
+```{math}
+F_1 = F_2 = 1
+```
+and for $n \geq 3$,
+
+```{math}
+F_n = F_{n-1} + F_{n-2}.
+```
+Write a function `fib(n)` that recursively computes the `n`-th Fibonacci number $F_n$. Your program should raise a `ValueError` if the input is not a positive integer.
+
+
+```python
+>>> fib(15)
+610
+>>> fib(30)
+832040
+```
+
+
+
+## Task 5
+
+Follow the proof of Proposition 14.6 in the Math 290 textbook to write the following function computing power sets.
+
+
+Write a function `power_set(S)` that recursively computes the power set of a given set of integers, input as a list `S`.
+The order of the resulting list does not matter.
+
+
+```python
+>>> power_set([1,2,3])
+[[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3]]
+>>> power_set([])
+[[]]
+```
+
+
+*Hint 1*: the `append()` function is probably not helpful here, since it does not return a new list. You might try using the code
+
+`L = L+[a]`
+
+to add the element `a` to the list `L` and return the result.
+
+*Hint 2*: another way to state the idea in Proposition 14.6 is to say that: given `a` in `S`,
+
+```{math}
+\mathcal P(S) = \mathcal P(S-\{a\}) \bigcup \{X\cup \{a\} : X\in \mathcal P(S-\{a\})\}.
+```
+In Python, if `a=S[0]`, this might look like:
+
+```python
+power_set(S) = power_set(S[1:]) + [x+[a] for x in power_set(S[1:])]
+```

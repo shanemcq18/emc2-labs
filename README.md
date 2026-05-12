@@ -2,11 +2,11 @@
 
 Source repository for the BYU EMC2 labs.
 
-## RST and Sphinx
+## MyST Markdown and Sphinx
 
-The labs are written in reStructuredText (RST or reST) and compiled using Sphinx.
-Check out the [RST primer](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#rst-primer) and a [guide for doing math](https://sphinx-rtd-trial.readthedocs.io/en/latest/ext/math.html) in RST.
-[Sphinx](https://www.sphinx-doc.org/en/master/man/sphinx-build.html) is a Python library for converting RST files into HTML files (webpages).
+The labs are written in [MyST Markdown](https://myst-parser.readthedocs.io/) and compiled using Sphinx.
+MyST supports normal Markdown plus Sphinx directives such as admonitions, toctrees, figures, and math blocks.
+[Sphinx](https://www.sphinx-doc.org/en/master/man/sphinx-build.html) converts the Markdown source files into HTML files (webpages).
 
 ### Environment Configuration
 
@@ -74,15 +74,13 @@ Running [`initiate_deploy.sh`](./initiate_deploy.sh) accesses the emc2 server (a
 
 ### Codebuddy
 
-If you are feeling really ambitious, Codebuddy can be hard to work with---especially when trying to align tasks in the `.rst` files and the ones written in Codebuddy. Codebuddy *does* have a feature where you can import/export assignments ("Import Assignment" button in the course homepage or "Export Assignment" in the assignment page) as `json` files. This means that you *could* write a program that would go through all the `.rst` files and extract out all the task instructions, and then save them to a `json` file that could be imported to Codebuddy.
+If you are feeling really ambitious, Codebuddy can be hard to work with---especially when trying to align tasks in the `.md` files and the ones written in Codebuddy. Codebuddy *does* have a feature where you can import/export assignments ("Import Assignment" button in the course homepage or "Export Assignment" in the assignment page) as `json` files. This means that you *could* write a program that would go through all the `.md` files and extract out all the task instructions, and then save them to a `json` file that could be imported to Codebuddy.
 
 Here are a few thoughts on this idea:
 
 - If the program could handle some of the other features of Codebuddy like hints, solutions, verification code, and tests, that would be great.
-  - The last three of those examples would obviously not be written in the ``rst`` files, but maybe a separate file in a separate folder that sphinx doesn't touch?
+  - The last three of those examples would obviously not be written in the Markdown files, but maybe a separate file in a separate folder that sphinx doesn't touch?
 - Codebuddy can't handle $\text{LaTeX}$, but many of our tasks use $\text{LaTeX}$ in the description, perhaps a tool that could strip this out, or replace it with Markdown inline code would be nice.
-  - Codebuddy also uses Markdown which is slightly different than `rst` syntax (see how bulleted lists are made in both), so handling that would be great as well.
-  - The same issue occurs with code blocks in Markdown and `rst`
 - Integrating this program into our `make` file would enable these `json` files to be updated every time we deployed or used `make` locally, but (as of right now) I think we would still have to import the `json` file by hand.
 - having an option to `[include_previous]` (see Codebuddy task instruction for more info) would be a great feature.
 

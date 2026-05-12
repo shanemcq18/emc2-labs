@@ -20,6 +20,14 @@ extensions = [
     "sphinx_copybutton"
     ]
 
+myst_enable_extensions = [
+    "colon_fence",
+    "dollarmath",
+    "amsmath",
+]
+
+myst_heading_anchors = 3
+
 # excludes all line numbers, prompt characters, and console outputs
 copybutton_exclude = '.linenos, .gp, .go'
 

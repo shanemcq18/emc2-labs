@@ -1,0 +1,110 @@
+
+
+# Lab 10: Counterexamples
+
+In this lab we will use a computer search to find counterexamples to some statements that seem plausible, given a handful of initial data, but are actually false.
+For each "proposition" listed below, determine the smallest counterexample.
+
+
+## "Proposition" 1: Fermat Primes
+
+**Disprove**: Every number of the form $2^{2^k}+1$ is prime, for $k=0,1,2,3,\ldots$.
+
+Write a function `fermat_prime(k)` that takes an integer `k` and outputs `True` or `False` depending on whether or not `2^(2^k)+1` is prime.
+
+
+The SymPy package has some useful functions for primality testing and factoring:
+
+```python
+>>> from sympy import isprime, factorint
+```
+
+:::{note}
+[SymPy](https://www.sympy.org/en/index.html) is a library created to do symbolic mathematics.
+You can write math expressions to use in code in the way that you do on paper.
+It also provides very nice functions to do algebra, calculus, linear algebra, and equation solving.
+:::
+## "Proposition" 2: Mersenne Primes
+
+**Disprove**: Whenever $p$ is a prime number, $2^p-1$ is also a prime number.
+
+Write a function `mersenne_prime(p)` that takes a prime number `p` and outputs `True` or `False` depending on whether or not `2^p-1` is prime.
+
+
+:::{hint}
+You can get the `n`-th prime using `prime(n)` after you import `prime` from `sympy`.
+:::
+## "Proposition" 3: Prime Number Races
+
+Fact: Every prime number larger than $2$ is congruent to either $1$ or $3$ modulo $4$.
+Let $\pi_1(x)$ denote the number of primes $\leq x$ which are $1$ modulo $4$, and define $\pi_3(x)$ likewise.
+For example, $\pi_1(15) = 2$ (counting $5$ and $13$) and $\pi_3(15) = 3$ (counting $3$, $7$, $11$).
+
+**Disprove**: $\pi_3(x)$ is always in first place (or tied for first) in the "prime number race," that is, $\pi_3(x) \geq \pi_1(x)$ for all $x \geq 3$.
+
+In your code, define two empty lists `pi1=[]` and `pi3=[]`. Set `p=3`.
+Write a `while` loop that adds the prime `p` to the appropriate list, incrementing to the next prime with `p=nextprime(p)`.
+Exit the loop when you have found a counterexample to the "proposition", and print the value of `p`.
+
+
+*Interesting fact*: it has been proven that
+
+```{math}
+\lim_{x\to \infty} \frac{\pi_1(x)}{\pi_3(x)} = 1
+```
+meaning that "at infinity" the prime number race ends in a tie.
+
+## "Proposition" 4: Cyclotomic Polynomials
+
+For each $n$, factor the polynomial $x^n-1$ as much as possible, assuming that only integer coefficients are allowed.
+For example,
+
+```{math}
+x^2-1 = (x-1)(x+1), \quad x^3-1 = (x-1)(x^2+x+1), \quad x^4-1 = (x-1)(x+1)(x^2+1), \ldots.
+```
+The polynomials $x-1$, $x+1$, $x^2+1$, $x^2+x+1$, ..., are called *cyclotomic polynomials*.
+
+**Disprove**: Every coefficient of every cyclotomic polynomial is in the set $\{1,0,-1\}$.
+
+
+Write a function `factor_coefficients(poly)` that takes as input a polynomial `poly` in the variable `x` and outputs a list containing the coefficients of every irreducible factor of `poly`. Do not include repeats.
+
+
+For this problem, you should start by running the following code:
+
+```python
+>>> from sympy import factor_list, symbols, Poly
+>>> x = symbols('x')
+```
+
+Then you can get a list of factors of a polynomial by running:
+
+```python
+>>> factor_list(x**10-1)[1]
+[(x - 1, 1),
+(x + 1, 1),
+(x**4 - x**3 + x**2 - x + 1, 1),
+(x**4 + x**3 + x**2 + x + 1, 1)]
+```
+
+This will output a list of ordered pairs, with the first element of each pair being a polynomial factor, and the second element being the exponent of that factor:
+
+```{math}
+x^{10} - 1 = (x-1)^1(x+1)^1(x^4-x^3+x^2-x+1)^1(x^4+x^3+x^2+x+1)^1
+```
+Then for each factor you can do something like
+
+```python
+>>> fac=(x**4 - x**3 + x**2 - x + 1,1)[0]
+>>> Poly(fac).coeffs()
+[1, -1, 1, -1, 1]
+```
+
+to get a list of the coefficients.
+If you can get all of the coefficients into one list, turn this list into a set, and then back into a list to remove duplicates.
+
+:::{note}
+A `set` is another data type in Python.
+It is similar to a mathematical set because it does not allow duplicate values.
+This can be useful in Python because turning a `list` into a `set` and back into a `list` will remove all duplicates.
+:::
