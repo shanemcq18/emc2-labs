@@ -20,10 +20,14 @@ A few moments of thought (and recalling problem 25 in Section 16.4) will show th
 ```{math}
 \int_C x \, dy - y \, dx = x_1 y_2 - x_2 y_1.
 ```
-### Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Write a function, `area(x)`, that takes an array of points in $\mathbb R^2$ in counter-clockwise order (positively oriented), `x`, and computes the area of the polygon they define by using Green's Theorem.
 
+
+:::
 
 ## Polyhedra
 
@@ -42,10 +46,14 @@ Let's begin with finding an appropriate value for $\mathbf n$.
 Since we are interested in finding the surface area of a face of a polyhedron, we know that the face is a plane.
 The normal to the plane (and hence the surface) can be determined by finding the equation of the plane.
 
-### Task 2
+:::{admonition} Task 2
+:class: exercise
+
 
 Write a function, `plane(x)`, that takes in three points (as an array) in $\mathbb R^3$, `x`, and calculates the the coefficients defining the plane that contains all three points i.e. return `a, b, c, d` such that `a * x + b * y + c * z == d` for `x[0, :], x[1, :], x[2, :]`.
 
+
+:::
 
 ## The Anti-curl
 
@@ -73,11 +81,15 @@ If $C$ is the line segment connection the point $(x_1, y_1, z_1)$ to the point $
 ```{math}
 \int_C \mathbf F \cdot d\mathbf r = \frac 16 \left( \frac{x_1y_2-x_2y_1}{c} + \frac{x_2z_1-x_1z_2}{b} + \frac{y_1z_2-y_2z_1}{a} \right).
 ```
-### Task 3
+:::{admonition} Task 3
+:class: exercise
+
 
 Use your code from the previous exercises to write a function, `oriented_area(x)`, that takes an array of points in $\mathbb R^3$ in counter-clockwise order (positively oriented), `x`, and computes the area of the polygon they define by using Stokes' Theorem. Make sure to first verify that all points lie in the same plane (by finding the plane and using `np.isclose` or `np.allclose` to verify each point satisfies the plane equation) and `raise ValueError("all points must lie in the same plane")` otherwise.
 
 
+
+:::
 
 ## Equation of a plane
 

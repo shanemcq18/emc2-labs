@@ -69,7 +69,9 @@ plt.show()
 :width: 95 %
 :align: center
 ```
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Make a heatmap plot to help you visualize the following functions:
 
@@ -80,27 +82,47 @@ Make a heatmap plot to help you visualize the following functions:
 ```
 Use subplots to put the plots of $f$, $g$, and $h$ side-by-side, and restrict the plotting domain to $[-1, 1]^2$ for all functions.
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 Repeat Task 1, but this time make contour plots of the functions.
 
 
-## Task 3
+:::
+
+:::{admonition} Task 3
+:class: exercise
+
 
 Repeat Task 1, but this time make wireframe plots of the functions.
 
 
-## Task 4
+:::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Repeat Task 1, but this time make surface plots of the functions.
 
 
-## Task 5
+:::
+
+:::{admonition} Task 5
+:class: exercise
+
 
 Select a function of two variables that you find interesting and create a heatmap, contour, wireframe, and surface plot for the function.
 
 
-## Task 6
+:::
+
+:::{admonition} Task 6
+:class: exercise
+
 
 The following function represents the continuous topography of a mountain range, giving the elevation `h(x, y)` at each point `(x, y)`:
 
@@ -115,9 +137,15 @@ Here is some Python-friendly code you can copy and paste (you’ll need to modif
 
 Make a wireframe plot and a surface to help you visualize this function. For this whole problem, keep the `x` and `y` values in the box `0 <= x,y <= 1600`.
 
-## Challenge
+:::
+
+:::{admonition} Challenge
+:class: exercise
+
 
 (In this problem `h(x,y)` refers to the function in Task 6.)
 A mosquito wants to fly from the starting point `A = (200, 200, h(200, 200))` to the ending point `B = (1400, 1400, h(1400, 1400))`. It will do this by first flying straight up to the point `(200,200,H)`, then, maintaining a constant elevation of `H`, it will fly around any obstacles in its way until it reaches `(1400,1400,H)`, at which point it will fly straight down to `B`. What is the minimum value of `H` so that this is possible? Keep in mind that the `x`, `y` values of the mosquito’s position must always satisfy the condition `0 <= x, y <= 1600`. (You may assume that the mosquito takes up no physical space, so it can fit through gaps of arbitrarily small size.)
 
 Hint: what is the maximum value of `h(0, y)` (or `h(x, 0)`)?
+
+:::

@@ -61,7 +61,9 @@ Visit
 
 Start by reading the instructions in the Introduction.
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Complete every exercise from each of the following lessons:
 
@@ -73,3 +75,5 @@ Complete every exercise from each of the following lessons:
 6. Lesson 6: Multi-table queries with JOINs
 7. Lesson 7: OUTER JOINs
 8. Lesson 8: A short note on NULLs
+
+:::

@@ -45,11 +45,15 @@ plt.show()
 The resulting plot is shown in (b). This time, the `x`-axis correctly matches up with the `y`-axis. The resolution is also much better because `x` and `y` have `50` entries each instead of only `10`.
 
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Write a function that plots the functions `sin(x)`, `cos(x)`, and `arctan(x)` on the domain `[-2π, 2π]` (use `np.pi` for π). Call `plt.xlim(-2*np.pi, 2*np.pi)` before `plt.show()` to stretch the `x`-axis appropriately. Make sure the domain is refined enough to produce a figure with good resolution.
 
 *Note*: For this lab, the autograder is testing to see if your graphs are a pixel-perfect match for the solution graphs, so follow the instructions closely. Future labs will mostly rely on alternative grading methods.
+
+:::
 
 ## Plot Customization
 
@@ -57,61 +61,21 @@ The plots you created in Task 1 are extremely basic. Most plots are greatly impr
 
 `plt.plot()` receives several keyword arguments for customizing the drawing. For example, the color and style of the line are specified by the following string arguments.
 
-```{list-table}
-:widths: 10 50 10 10 200
-:header-rows: 1
-
-* - Key
-  - Color
-  - 
-  - Key
-  - Style
-* - `"b"`
-  - blue
-  - 
-  - `"-"`
-  - solid line
-* - `"g"`
-  - green
-  - 
-  - `"--"`
-  - dashed line
-* - `"r"`
-  - red
-  - 
-  - `"-."`
-  - dash-dot line
-* - `"c"`
-  - cyan
-  - 
-  - `":"`
-  - dotted line
-* - `"k"`
-  - black
-  - 
-  - `"o"`
-  - circle marker
-
-
-```
+| Color Key | Color | Style Key | Style |
+| --- | --- | --- | --- |
+| `"b"` | blue | `"-"` | solid line |
+| `"g"` | green | `"--"` | dashed line |
+| `"r"` | red | `"-."` | dash-dot line |
+| `"c"` | cyan | `":"` | dotted line |
+| `"k"` | black | `"o"` | circle marker |
 Specify one or both of these string codes as the third argument to `plt.plot()` to change from the default color and style. Other `plt` functions further customize a figure.
 
-```{list-table}
-:header-rows: 1
-
-* - Function
-  - Description
-* - `legend()`
-  - Place a legend in the plot
-* - `title()`
-  - Add a title to the plot
-* - `xlim()` / `ylim()`
-  - Set the limits of the `x`- or `y`-axis
-* - `xlabel()` / `ylabel()`
-  - Add a label to the `x`- or `y`-axis
-
-
-```
+| Function | Description |
+| --- | --- |
+| `legend()` | Place a legend in the plot |
+| `title()` | Add a title to the plot |
+| `xlim()` / `ylim()` | Set the limits of the `x`- or `y`-axis |
+| `xlabel()` / `ylabel()` | Add a label to the `x`- or `y`-axis |
 ```python
 x1 = np.linspace(-2, 4, 100)
 plt.plot(x1, np.exp(x1), 'g:', linewidth=6, label="Exponential")
@@ -131,7 +95,9 @@ plt.show()
 ```
 See [the MatPlotLib documentation](https://matplotlib.org/stable/index.html) for more comprehensive lists of colors, line styles, and figure customization routines.
 
-## Task 2
+:::{admonition} Task 2
+:class: exercise
+
 
 Write a function to plot the curve $f(x) = \dfrac{1}{x-1}$ on the domain [-2, 6].
 
@@ -148,3 +114,5 @@ The plot should resemble the figure below.
 :align: center
 :width: 45%
 ```
+
+:::

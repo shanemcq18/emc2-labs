@@ -18,7 +18,9 @@ To compute the dot product of two vectors `u` and `v`, use the syntax `u.dot(v)`
 
 
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 
 
@@ -40,7 +42,11 @@ array([ 0.5,  1. ,  0. , -0.5])
 ```
 
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 
 
@@ -66,7 +72,11 @@ Here are a few more things you should be aware of:
 
 
 
-## Task 3
+:::
+
+:::{admonition} Task 3
+:class: exercise
+
 
 
 Write a function  `Orthonormal(X)` that takes as input a list `X` of vectors `[v_1, v_2,... v_p]` and returns a list of vectors `[u_1, u_2,... u_q]` which forms an orthonormal basis for the space spanned by the original vectors.
@@ -84,3 +94,5 @@ array([0.57735027, 0.57735027, 0.57735027])]
 [array([ 0.70710678,  0.        , -0.70710678,0]),
 array([0.37796447, 0.37796447, 0.37796447, 0.75592895])]
 ```
+
+:::

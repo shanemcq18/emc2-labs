@@ -19,7 +19,9 @@ raise ValueError('Error: Vectors have different lengths.')
 :::{admonition} Challenge
 Can you do all the Vector tasks with list comprehension?
 :::
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Write a function `vector_add(v,w)` that takes as input two vectors `v` and `w` and returns the vector `v+w`. The input and output vectors should be represented as  python list data types. Your function should check to ensure the vectors are the same size. If not, your function should raise a `ValueError` with an appropriate message.
 
@@ -33,7 +35,11 @@ Error: Vectors have different lengths.
 ```
 
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 Write a function `dot_product(v,w)` that takes as input two vectors `v` and `w` and returns the dot product of `v` and `w`. The input and output vectors should be represented as  python list data types. Your function should check to ensure the vectors are the same size.  If not, your function should raise a `ValueError` with an appropriate message.
 
@@ -50,13 +56,19 @@ Error: Vectors have different lengths.
 
 
 
-## Challenge
+:::
+
+:::{admonition} Challenge
+:class: exercise
+
 
 Write a function that takes as input two vectors `u` and `v`, and computes the cosine of the angle between them using the law of cosines. Do not turn this in for credit. You may find the `math.sqrt` function useful to compute the norms of vectors.
 
 
 
 
+
+:::
 
 ## Double and Nested List Comprehensions
 
@@ -116,10 +128,18 @@ We get the matrix:
 ```
 Notice how the ones place represents the column index, and the tens place represents the row index.
 
-## Task 3
+:::{admonition} Task 3
+:class: exercise
+
 
 Using a double list comprehension, write a function `cartesian_product(a, b)` that takes in two Python lists `a`, and `b` and returns a list of the cartesian product of $a$ and $b$.
 
-## Task 4
+:::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Using a nested list comprehsion, write a function `matrix_sum(A, B)` that takes in two Python lists of lists and returns the matrix sum.
+
+:::

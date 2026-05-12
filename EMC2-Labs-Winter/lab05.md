@@ -66,9 +66,13 @@ Stopped after 53 iterations.
 Max a[n] = 1.414213562373095
 Max b[n] = 1.4142135623730951
 ```
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Adapt the above code to create a function `cube_root(K)`, which finds the cube root of any natural number $K$, (i.e., $\sqrt[3]{K}$). You should only need to change two lines, one to set an appropriate initial value for the list `b`, and one to change the number for which the algorithm is searching. *Your code should mimic the outputs of the given program precisely.*
+
+:::
 
 ## Searching in a Sorted Space
 
@@ -92,7 +96,9 @@ We will use a **binary search**. This algorithm is exactly like the algorithm fr
 5. With our new `min_index` and `max_index`, recalculate `curr_index` to be halfway between them and continue recursively by calling the function again with the new values for the variables.
 6. Break the loop and return -1 when `min_index <= max_index`.
 :::
-## Task 2
+:::{admonition} Task 2
+:class: exercise
+
 
 With the pseudocode given above, write a recursive binary search function called `binary_search(l,n)` that takes as input a sorted list of integers `l` and an integer `n` to search for and returns an index at which that integer  appears. Return `-1` if the integer is not in the list. Here are some clarifications:
 
@@ -109,16 +115,23 @@ With the pseudocode given above, write a recursive binary search function called
 ```
 
 
-### Challenge
+:::
+:::{admonition} Challenge
+:class: exercise
+
 
 The pseudocode will always return an index at which `n` appears, but it may not be the first index. How can you alter your code so that the index returned is always the first index? This would replicate the behavior of Python's built-in `find` function.
 
+
+:::
 
 ## Timing
 
 When we introduced the binary search, we mentioned that checking every element would take a long time. So, does the binary search actually go faster? If so, how much faster? We need two things to test this: 1) a `linear_search` function and 2) a big list of numbers. Running both functions on a big list of numbers will let us explore how well they perform.
 
-## Task 3
+:::{admonition} Task 3
+:class: exercise
+
 
 Write a function `linear_search(l,n)` that takes as input a sorted list of integers `l` and an integer `n` and returns the index at which the integer `n` *first* appears. Return `-1` if the integer is not in the list. Use a `for` or `while` loop to search linearly instead of using a binary search. You may assume that the list is sorted, which may help you know when to return `-1`. (Note: this problem should be much simpler than problem 2.)
 
@@ -138,7 +151,11 @@ print("Time took: ", time() - t)    # current time - saved time
 ```
 Compare the output for `binary_search` and `linear_search`.
 
-## Task 4
+:::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Run your code on the following examples:
 
@@ -147,3 +164,5 @@ Run your code on the following examples:
 2. Increase the length of `a` by making `a` contain all primes with `1 <= n <= 10000000`. It may take a few moments to generate. Search for `n = 2`, `n = 9999991`, and `n = 524287` (the `7` th Mersenne prime), and `n = 1632913`. How are the algorithms comparing? Given an arbitrary `n`, which algorithm would you expect to be faster? As the size of `a` grows, which algorithm would you expect to be faster?
 
 3. With the same `a` from (2), search for `n = 1234567`, `n = 10000000`, `n = 1`, and `n = 512`. Answer the same questions as in (2).
+
+:::

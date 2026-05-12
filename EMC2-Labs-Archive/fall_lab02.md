@@ -96,7 +96,9 @@ Question: Why do we use `range(n+1)` instead of `range(n)` in the code above?
 > print(my_list)
 > ```
 > Note: we have introduced a new command `len` which gives the length of a list.
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Define a function `sum_list(L)` which takes as input a list `L` of numbers, and
 returns the sum of the values in the list.
@@ -107,7 +109,11 @@ returns the sum of the values in the list.
 ```
 
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 Define a function `list_relu(L)` which takes as input a list `L` of numbers, and
 returns a list which is the same as `L` except that all negative values in `L` are replaced with `0`.
@@ -122,6 +128,8 @@ Notes:
 [1,0,17,0,0]
 ```
 
+
+:::
 
 ## NumPy
 
@@ -177,7 +185,9 @@ the function name.
 Note that the trigonometric functions in NumPy are computed in terms of radians, and that
 `np.log` is the natural logarithm, with base `e`.
 
-## Task 3
+:::{admonition} Task 3
+:class: exercise
+
 
 Find the value of
 
@@ -187,6 +197,8 @@ Find the value of
 using NumPy functions, and save its value as the variable `my_var`.
 Here log denotes the natural logarithm.
 
+
+:::
 
 ## Vectors and Matrices
 
@@ -250,7 +262,9 @@ array([3, 6, -3])
 ```
 
 
-## Task 4
+:::{admonition} Task 4
+:class: exercise
+
 
 Let
 
@@ -296,6 +310,8 @@ Compute the value of
 and save it as a variable called `my_vect_var`.
 
 
+:::
+
 ## Elements of NumPy Arrays
 
 We can access elements of a NumPy array the same way we access elements in a list, by
@@ -337,7 +353,9 @@ which will return the element at `row` and `column`.
 [-5 -6 -7 -8]
 ```
 
-## Task 5
+:::{admonition} Task 5
+:class: exercise
+
 
 Define a function `first_rpt(M)` which takes as input a NumPy matrix `M`,
 and outputs a matrix in which every row of `M` has been replaced with the first row.
@@ -351,6 +369,8 @@ array([[1, 2, 3, 4],
 [1, 2, 3, 4]])
 ```
 
+
+:::
 
 ## Nested for Loops
 
@@ -430,7 +450,9 @@ Now, we can see if the function actually does what we think it should:
 [1 1 1 1 2 1]]
 ```
 
-## Task 6
+:::{admonition} Task 6
+:class: exercise
+
 
 Define a function, called `matrix_sum(M)`, which takes as input a matrix `M` (as
 a NumPy array), and adds up all of the entries.
@@ -441,6 +463,8 @@ a NumPy array), and adds up all of the entries.
 -5
 ```
 
+
+:::
 
 ## List Comprehension
 
@@ -488,7 +512,9 @@ Here are a few more examples.
 ```
 
 
-## Task 7
+:::{admonition} Task 7
+:class: exercise
+
 
 
 Using list comprehension, create a list
@@ -499,6 +525,12 @@ Using list comprehension, create a list
 and save it as a variable called `long_list`.
 
 
-## Task 8
+:::
+
+:::{admonition} Task 8
+:class: exercise
+
 
 Using list comprehension, write a function returns a Python list of temperatures in fahrenheit from a Python list of temperatures in celcius. Call it `fah_to_cel(c)`. The formula is $\frac{9}{5}c + 32 = f$.
+
+:::

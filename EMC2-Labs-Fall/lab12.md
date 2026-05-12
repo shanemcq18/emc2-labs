@@ -79,7 +79,9 @@ def recursive_sum(n):
     else:
         return n + recursive_sum(n-1)
 ```
-## Task 1
+::::{admonition} Task 1
+:class: exercise
+
 
 Turn to a neighbor and discuss which line is the base case, recursive case, and conditional statement.
 
@@ -88,38 +90,24 @@ Write out the different calls `recursive_sum(5)` will make. This should look som
 :::{admonition} "If all you have is a hammer everything looks like a nail." - Abraham Maslow
 Recursion is perfectly suited for certain situations, but be careful to not overuse it. Generally speaking, recursion works well for divide and conquer problems, data in tree-based structures, and any time a problem can be divided in to smaller subproblems. Iteration can then be used for everything else.
 
-```{list-table}
-:widths: 33 34 33
-:header-rows: 1
-
-* - Feature
-  - Recursion
-  - Iteration
-* - **Implementation**
-  - Function calling itself
-  - Loops
-* - **Termination**
-  - Defined in recursive function
-  - Defined in loop's definition
-* - **Size of Code**
-  - Small
-  - Large
-* - **Speed**
-  - Slow
-  - Fast
-* - **Time Complexity**
-  - High
-  - Low
-* - **Memory**
-  - Uses more memory
-  - Uses less memory
-
-```
+| Feature | Recursion | Iteration |
+| --- | --- | --- |
+| **Implementation** | Function calling itself | Loops |
+| **Termination** | Defined in recursive function | Defined in loop's definition |
+| **Size of Code** | Small | Large |
+| **Speed** | Slow | Fast |
+| **Time Complexity** | High | Low |
+| **Memory** | Uses more memory | Uses less memory |
 If you want something to be fast and efficient, but look messy, use iteration. If those things aren't important and you want pretty code, use recursion.
 
 Recursion is a very difficult topic to understand when first starting out, so don't worry if you have trouble grasping it.
 :::
-## Task 2
+
+::::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 Recall that the factorial function is defined on nonnegative integers as
 
@@ -140,7 +128,11 @@ Write a function `fac(n)` that computes `n!` recursively. Your program should ra
 265252859812191058636308480000000
 ```
 
-## Task 3
+:::
+
+::::{admonition} Task 3
+:class: exercise
+
 
 Write a function `sum_digits(n)` that will sum up all the digits in a number.
 
@@ -154,7 +146,12 @@ Write a function `sum_digits(n)` that will sum up all the digits in a number.
 :::{hint}
 Remember `a % b` returns the remainder after integer division, and `//` (floor division) removes the remainder after division.
 :::
-## Task 4
+
+::::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 The Fibonacci numbers are a collection of natural numbers labeled
 
@@ -183,7 +180,11 @@ Write a function `fib(n)` that recursively computes the `n`-th Fibonacci number 
 
 
 
-## Task 5
+:::
+
+:::{admonition} Task 5
+:class: exercise
+
 
 Follow the proof of Proposition 14.6 in the Math 290 textbook to write the following function computing power sets.
 
@@ -216,3 +217,5 @@ In Python, if `a=S[0]`, this might look like:
 ```python
 power_set(S) = power_set(S[1:]) + [x+[a] for x in power_set(S[1:])]
 ```
+
+:::

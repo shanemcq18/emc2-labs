@@ -71,15 +71,16 @@ Two different K-Means clusterings for the iris dataset. Notice that the clusteri
 ```
 The algorithm can be summarized as follows.
 
-1) Choose $k$ initial cluster centers.
+1. Choose $k$ initial cluster centers.
 
-2) For $i=0, \ldots, \texttt{max_iter}$,
+2. For $i=0, \ldots, \texttt{max_iter}$,
 
-> a) Assign each data point to the cluster center that is closest, forming $k$ clusters.
->
-> b) Recompute the cluster centers as the means of the new clusters.
->
-> c) If the old cluster centers and the new cluster centers are sufficiently close, terminate early.
+   a. Assign each data point to the cluster center that is closest, forming $k$ clusters.
+
+   b. Recompute the cluster centers as the means of the new clusters.
+
+   c. If the old cluster centers and the new cluster centers are sufficiently close, terminate early.
+
 ```{figure} _static/figures/kmeans.gif
 :align: center
 :width: 80%
@@ -234,7 +235,9 @@ Our clustering algorithm predicted the correct classification of a species 83% (
 :::{note}
 Unsupervised learning is primarily used for pattern recognition. This means that most times we do not have the targets (or labels) for the data, making determining accuracy ambiguous.
 :::
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 In the example above, we used K-Means on  `sepal length (cm)` and `petal width (cm)`. Write a function `generate_predictions(X, n_clusters, random_state)` that takes in `X`, the data to cluster, `n_clusters`, the number of clusters to use, and `random_state`, the random state. `generate_predictions` should return the predictions and also the cluster centers. Use this function to generate predictions and cluster centers for `petal length (cm)` and `petal width (cm)`.
 
@@ -242,6 +245,8 @@ In the example above, we used K-Means on  `sepal length (cm)` and `petal width (
 >>> df.columns
 Index(['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)'], dtype='object')
 ```
+
+:::
 
 ## Application: Color Quantization
 
@@ -256,7 +261,9 @@ Each 2-dimensional layer represents the red, green, and blue color values, so ea
 
 To quantize an image, the K-Means algorithm (or another similar algorithm) first finds clusters which represent groups of pixels are closest in color. It also finds cluster centers which represent the mean color of the cluster. It then takes every pixel in a cluster and recolors it to the cluster center.
 
-## Task 2
+::::{admonition} Task 2
+:class: exercise
+
 
 Write a function, `quantize_image(X, k, seed)`, that takes a color image array, `X` (shape `(m, n, 3)`), the number of clusters, `k`, and a random seed and does the following:
 
@@ -275,6 +282,9 @@ Write a function, `quantize_image(X, k, seed)`, that takes a color image array, 
 :::{warning}
 Make sure to set `random_state=42` when you create your `KMeans` object! Do NOT change the original image during any part of this process (use `np.copy` or `X.copy()` before performing any of the above steps). You can test your code with the file given in CodeBuddy.
 :::
+
+::::
+
 ## Application: Detecting Active Earthquake Regions
 
 Suppose we are interested in learning about which locations are prone to frequent earthquake activity.
@@ -291,7 +301,9 @@ The file `earthquake_coordinates.txt` contains earthquake data throughout the wo
 Each row represents a different earthquake and the columns are scaled longitude and latitude measurements.
 We want to cluster this data into active earthquake regions.
 
-## Task 3
+::::{admonition} Task 3
+:class: exercise
+
 
 We will be using the K-Means algorithm to cluster earthquake data, but, this data is recorded in latitudinal and longitudinal coordinates. This is problematic because data points at the longitudinal edges (180˚ and -180˚) are actually right next to each other. This means that the euclidean distance (or other distance algorithm we can use) will be incorrect. As such, we must convert these coordinates to 3-dimensional Euclidean coordinates to preserve the sperical nature of the data before running the K-Means algorithm.
 
@@ -322,7 +334,12 @@ One issue to clustering the data with euclidean coordinates is that because all 
 
 For this lab we will use option two, but it is good to know that there are multiple ways to solve this problem.
 :::
-## Task 4
+
+::::
+
+::::{admonition} Task 4
+:class: exercise
+
 
 Use your code from the previous tasks to write a function, `classify_geo(X, k, seed)`, that takes an array of geographical data, `X`, and does the following:
 
@@ -337,7 +354,12 @@ Use your code from the previous tasks to write a function, `classify_geo(X, k, s
 :::{hint}
 To load in `earthquake_coordinates.txt` as a `np.array`, use `np.loadtxt()`.
 :::
-## Task 5
+
+::::
+
+::::{admonition} Task 5
+:class: exercise
+
 
 Once we are able to get the euclidean coordinates and run them through our K-Means clustering algorithm, we want to be able to plot the results. We will plot our euclidean coordinates in three dimensions.
 
@@ -352,3 +374,5 @@ Write a function `plot_earthquake_3D(X_euclidean, predictions, centroids)` that 
 :::{admonition} Visual Studio Code
 If you want to have more functionality in your coding (like being able to see an interactive 3d plot for task 5), consider using VSCode, a free, lightweight code-editor. You can find an introductory tutorial [here](https://code.visualstudio.com/docs/getstarted/getting-started).
 :::
+
+::::

@@ -22,21 +22,35 @@ Repeat the process; at the $n$-th step, the input to the process is the interval
 
 Unless the process terminates because an exact solution has been found, the process produces two sequences ${a_n}$ and ${b_n}$ that both converge to a solution of the equation, and we can stop the process when $n$ is large enough that $b_n-a_n$ is less than the degree of accuracy we desire in our approximation of the solution.
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Write a function, `ivt_ex(tol, maxiter)`, that solves `-1 - x + 2 * x ** 3 + x ** 5 = 0` in the domain `(0, 1)` within an error of `tol` (defaulting to `1e-8`) using a maximum of `maxiter` iterations (defaulting to `100`). Return both the root and whether your code met the error condition within `maxiter` iterations. The error condition is met when you find a value of `x` where `|-1 - x + 2 * x ** 3 + x ** 5| < tol`.
 
-## Task 2a
+:::
+
+:::{admonition} Task 2a
+:class: exercise
+
 
 Write a function `make_poly(coef_list)` that takes a list of coefficients in increasing degree-order as an input and returns a function for the polynomial defined by those coefficients.
 
-## Task 2b
+:::
+
+:::{admonition} Task 2b
+:class: exercise
+
 
 Write a function `find_interval(f)` which takes a function, `f` as input and returns a tuple, `(a, b)`, representing an interval, `[a, b]`, on which the polynomial changes sign (meaning that `f(a)<0<f(b)` or `f(a)>0>f(b)`. Do not worry about checking for functions that do not change sign globally as we will guarantee that all inputs to this function will do so in a later exercise.
 
 To help you think about how to find such an interval, try the following: fix an initial value for `M` (e.g. `M=1`) and test the endpoints of the interval `[-M,M]`. If $f$ changes sign, you're done. If not, replace `M` with `2*M` and repeat.
 
-## Task 2c
+:::
+
+:::{admonition} Task 2c
+:class: exercise
+
 
 Every polynomial of odd degree has at least one real root. (Why?)
 Adapt your code from Task 1, using your code from Tasks 2a and 2b, to write a function, `ivt_poly(coef_list, tol, maxiter)`, that finds a root of the polynomial defined by `coef_list` within an error of `tol` (defaulting to `1e-8`) using a maximum of `maxiter` iterations (defaulting to `100`). Return both the root and whether your code met the error condition within maxiter iterations.
@@ -48,12 +62,16 @@ To test your code:
 2. The real roots of $-0.1 - x + 1000 x^2 + 10000 x^3 + 0.1 x^4 + x^5$ are approximately $-0.1, -0.01, 0.01$
 
 
+:::
+
 ## Newton's Method
 
 The idea of Newton's method is simple: Suppose $f$ is differentiable and suppose we want to solve $f(x)=0$. Start with a "guess" $x_0$ for the solution. Form the tangent line approximation to the graph of $y=f(x)$ at $(x_0,f(x_0))$.  Then our improved guess for the solution is the $x$-intercept of the tangent line, which we call $x_1$.  Repeat this process so that the input at step $n$ is the output $x_{n-1}$ from the previous step and the output is $x_n$, the $x$-intercept of the tangent line to the graph of $y=f(x)$ at $(x_{n-1}, f(x_{n-1}))$.
 
 
-## Task 3
+:::{admonition} Task 3
+:class: exercise
+
 
 Write a function, `newton(f, df, x0, tol, maxiter)`, that a takes a differentiable function, `f`, its derivative, `df`, an initial guess, `x0`, an error condition, `tol` (defaulting to `1e-8`), and a maximum number of iterations, `maxiter`, as inputs and uses Newton's method to approximate the solution to `f(x) = 0` within an error of `tol` using a maximum of `maxiter` iterations. Return both the solution and whether it met the error condition with `maxiter` iterations. You will need to do some algebra to write a recursive formula for $x_{n + 1}$ in terms of $x_{n}$.
 
@@ -61,7 +79,13 @@ Write a function, `newton(f, df, x0, tol, maxiter)`, that a takes a differentiab
 There is a solution to $\sin(x^2)+x^2-x-1=0$ between $-1$ and $0$.  Use Newton's method to find it.
 
 
-## Task 4
+:::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 When an equation has multiple solutions, which one Newton's method finds depends on the choice of $x_0$.
 Consider $x^3+0.1x^2-x-0.2=0$. Make a graph. (Revisit {doc}`lab02` if you need a refresher on how to do this.) How many solutions do you see? Find initial conditions that work to find each solution and obtain approximations to these solutions. Are there any initial conditions that will not work to find any solution?
+
+:::

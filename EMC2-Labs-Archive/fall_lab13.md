@@ -7,7 +7,9 @@ You will want to use Sympy Matrix objects and the `rref` method for this lab.
 
 
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 
 Write a function `vec_basis(L)` that takes as input a list of vectors in  $\mathbb R^n$ and returns a basis for the subspace spanned by the vectors.
@@ -31,7 +33,11 @@ Remember that the Sympy Matrix `rref` method returns a tuple, where the second v
 
 
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 
 
@@ -78,3 +84,5 @@ If `B` is the reduced echelon form of `A` and `x_i` is a free variable, we creat
 >>> lin_deps ([[1,6,11],[2,7,12],[3,8,13],[4,9,14],[5,10,15]])
 [[1,-2,1,0,0], [2,-3,0,1,0], [3,-4,0,0,1]]
 ```
+
+:::

@@ -23,23 +23,38 @@ for n in range(0,50):               # first 50 partial sums
     partial_sums.append(curr_sum)
 print(partial_sums)
 ```
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Create a function, `partial_sums(a, i, j, s)`, to compute the partial sums of a sequence, `a(k)`, from index `i` (inclusive) to index `j` (exclusive) where `i` defaults to `0` and `j` defaults to `10`, shifted by `s` (i.e. `s` is the initial value of the running total) where `s` default to `0`.
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 Using your function from the previous exercise, `partial_sums(a, i, j, s)`, create a function, `plot_partial_sums(a, i, j, s)`, that plots the partial sums of a sequence, `a(k)`, from index `i` (inclusive) to index `j` (exclusive), where `i` defaults to `0` and `j` defaults to `10`. Remember to label the axes (use `r"$n$"` and `rf"$\sum_{{k={i}}}^{{n}}a_k$"`), change the marker style (use `"."`), and set the xticks to be ten equally spaced indices of your partial sums (use `range(i, j, (j - i) // 10)`).
 
-## Task 3
+:::
+
+:::{admonition} Task 3
+:class: exercise
+
 
 Use your code from the previous exercises, `plot_partial_sums(a, i, j, s)`, to plot the first `50` terms of the series for $a_n = 1 / 2^n$ starting with `n = 0`. Can you see that the sequence of partial sums is converging to the correct limit?
 
-## Task 4
+:::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Use your code from the previous exercises, `plot_partial_sums(a, i, j, s)`, to plot the first `50` terms of the series for $a_n = (-1)^n$ starting with `n = 0`. Does this series converge or diverge?
 
-### The Harmonic Series
+:::
+## The Harmonic Series
 
 The harmonic series
 
@@ -48,15 +63,26 @@ The harmonic series
 ```
 is a particularly important example.
 
-## Task 5a
+
+:::{admonition} Task 5a
+:class: exercise
+
 
 Use your code from the previous exercises, `plot_partial_sums(a, i, j, s)`, to plot the first `50` terms of the harmonic series. Does this series converge or diverge?
 
-## Task 5b
+:::
+
+:::{admonition} Task 5b
+:class: exercise
+
 
 Use your code from the previous exercises, `plot_partial_sums(a, i, j, s)`, to plot the first `100` terms of the harmonic series. Does this series converge or diverge?
 
-## Task 5c
+:::
+
+:::{admonition} Task 5c
+:class: exercise
+
 
 Use your code from the previous exercises, `plot_partial_sums(a, i, j, s)`, to plot the first `1000` terms of the harmonic series. Does this series converge or diverge?
 
@@ -67,7 +93,8 @@ In the last exercises, you probably knew that the harmonic series
 ```
 diverges even before plotting it. This series is perhaps our favorite example of a divergent series. However, from plotting it, notice that it diverged rather slowly. Just from looking at the graph we have no guarantee that it would not eventually stop increasing. Looking at the first `1000` partial sums, we had yet to reach `7`, so what if the limit actually was `7`? Or `8`? Or `5000`? Graphs can give us a great idea of what is going on and are excellent tools to know how to use, but they *are not a proof*. We will look at some more examples where our intuition can fail us when looking at a graph.
 
-### p-Series and logs
+:::
+## p-Series and logs
 
 We know from the $p$-series test that
 ```{math}
@@ -79,19 +106,34 @@ converges if $p > 1$ and diverges if $0 < p \leq 1$. The harmonic series is then
 ```
 might converge, not by the $p$-series test but perhaps by some sort of comparison test. (Note that we are using $\log(n+1)$ instead of $\log(n)$ to avoid division by $0$.) Before working out the details, let's try plotting the partial sums of this series.
 
-## Task 6a
+
+:::{admonition} Task 6a
+:class: exercise
+
 
 Use your code from the previous exercises, `plot_partial_sums(a, i, j, s)`, to plot the first `100` terms of the series for $a_n = 1 / (n \log(n + 1))$ starting with $n = 1$ and using the `log` function from the `math` library. Does this series converge or diverge?
 
-## Task 6b
+:::
+
+:::{admonition} Task 6b
+:class: exercise
+
 
 Use your code from the previous exercises, `plot_partial_sums(a, i, j, s)`, to plot the first `1000` terms of the series for $a_n = 1 / (n \log(n + 1))$ starting with $n = 1$. Does this series converge or diverge?
 
-## Task 6c
+:::
+
+:::{admonition} Task 6c
+:class: exercise
+
 
 Use your code from the previous exercises, `plot_partial_sums(a, i, j, s)`, to plot the first `10000` terms of the series for $a_n = 1 / (n \log(n + 1))$ starting with $n = 1$. Does this series converge or diverge?
 
-## Task 7
+:::
+
+:::{admonition} Task 7
+:class: exercise
+
 
 Use your code from the previous exercises, `plot_partial_sums(a, i, j, s)`, to plot the first `1000` terms of the series
 ```{math}
@@ -100,7 +142,8 @@ Use your code from the previous exercises, `plot_partial_sums(a, i, j, s)`, to p
 starting with `n = 1`, and using the `log2`, `sqrt`, `floor` functions from the `math` library for $\log_2$, $\sqrt{\phantom{x}}$, and $\lfloor \phantom{x} \rfloor$, respectively. Does this series converge or diverge? If it converges, what is the limit?
 
 
-### Conclusion
+:::
+## Conclusion
 
 
 Let's look back at our answers to Tasks 6 and 7. We never saw the series

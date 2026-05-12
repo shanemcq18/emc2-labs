@@ -22,51 +22,24 @@ This command will also erase everything the turtle has done so that we can start
 
 Now that we have a turtle, we can begin drawing! We draw by directing where the turtle should go. The turtle begins at the center of the screen and faces north. The commands are basic and intuitively named. Here are a list of some of the main commands you'll be using. We highly recommend that you immediately set the turtle speed to maximum  when you are drawing something large.
 
-```{list-table} Turtle Commands
-:widths: 10 40
-:header-rows: 1
-
-* - Command
-  - Explanation
-* - `forward(length)`  
-  - moves the turtle forward `length` pixels 
-* - `backward(length)`  
-  - moves the turtle backwards `length` pixels 
-* - `left(angle)`  
-  - turns the turtle left by `angle` degrees (not radians!) 
-* - `right(angle)`  
-  - turns the turtle right by `angle` degrees 
-* - `pendown()`  
-  - puts the pen down to draw whenever the turtle moves 
-* - `penup()`  
-  - puts the pen up so that the turtle can move without drawing 
-* - `speed(n)`  
-  - sets the turtle speed where `n` is in `[1,13]`, with `1` slowest and `13` fastest 
-* - `goto(x,y)`  
-  - moves the turtle to a point `(x,y)`; the coordinates of the turtle's frames are `(0,0)` at the top left and `(800,500)` at the bottom right, so all `x` and `y` values are nonnegative.
-* - `setheading(angle)`  
-  - points the turtle toward `angle` degrees, where `0` degrees is directly right and angles go clockwise
-
-
-```
+| Command | Explanation |
+| --- | --- |
+| `forward(length)` | moves the turtle forward `length` pixels |
+| `backward(length)` | moves the turtle backwards `length` pixels |
+| `left(angle)` | turns the turtle left by `angle` degrees (not radians!) |
+| `right(angle)` | turns the turtle right by `angle` degrees |
+| `pendown()` | puts the pen down to draw whenever the turtle moves |
+| `penup()` | puts the pen up so that the turtle can move without drawing |
+| `speed(n)` | sets the turtle speed where `n` is in `[1,13]`, with `1` slowest and `13` fastest |
+| `goto(x,y)` | moves the turtle to a point `(x,y)`; the coordinates of the turtle's frames are `(0,0)` at the top left and `(800,500)` at the bottom right, so all `x` and `y` values are nonnegative. |
+| `setheading(angle)` | points the turtle toward `angle` degrees, where `0` degrees is directly right and angles go clockwise |
 There are also some fun things that you can do to customize your turtle. None of these are required, but are fun to know:
 
-```{list-table} More Turtle Commands
-:widths: 20 40
-:header-rows: 1
-
-* - Command 
-  - Explanation 
-* - `shape(sh)` 
-  - changes the turtle's shape, but only `"circle"` and `"turtle"` are accepted 
-* - `color(r,g,b)` or `color(colorstring)` 
-  - changes the pen color according to RGB values or a color name 
-* - `bgcolor(r,g,b)` or `bgcolor(colorstring)` 
-  - changes the background color 
-
-
-
-```
+| Command | Explanation |
+| --- | --- |
+| `shape(sh)` | changes the turtle's shape, but only `"circle"` and `"turtle"` are accepted |
+| `color(r,g,b)` or `color(colorstring)` | changes the pen color according to RGB values or a color name |
+| `bgcolor(r,g,b)` or `bgcolor(colorstring)` | changes the background color |
 For a full list of the commands that you can use, check out <https://github.com/tolgaatam/ColabTurtle>.
 
 So that you can get a feel for how to draw things with `Turtle` graphics, here is an example of drawing a square. Run this code on your own and check that you understand what is happening.  It may be useful to lower the speed if you cannot see what is happening.
@@ -98,51 +71,24 @@ As with all libraries, we must first import the library. Here is how it is impor
 
 Now that we have a turtle, we can begin drawing! We draw by directing where the turtle should go. The turtle begins at the center of the screen and faces to the right. (There is a chance that your turtle may begin facing a different direction, so it is worth it to check this.) The commands are basic and intuitively named. Here are a list of some of the main commands you'll be using. We highly recommend that you immediately set the turtle speed to maximum when you are drawing something large.
 
-```{list-table} Turtle Commands
-:widths: 10 40
-:header-rows: 1
-
-* - Command
-  - Explanation
-* - `forward(length)`  
-  - moves the turtle forward `length` pixels 
-* - `backward(length)`  
-  - moves the turtle backwards `length` pixels 
-* - `left(angle)`  
-  - turns the turtle left by `angle` degrees (not radians!) 
-* - `right(angle)`  
-  - turns the turtle right by `angle` degrees 
-* - `pendown()`  
-  - puts the pen down to draw whenever the turtle moves 
-* - `penup()`  
-  - puts the pen up so that the turtle can move without drawing 
-* - `speed(n)`  
-  - sets the turtle speed, where `n` is in `[0, 10]`, with `1` slowest, `n > 1` getting faster, and `0` fastest
-* - `goto(x,y)`  
-  - moves the turtle to a point `(x,y)`; the coordinates of the turtle's frames are exactly like the `xy`-plane with `(0,0)` at the center and positive and negative `x` and `y` accepted. There is a chance that your IDE may set `0` degrees to be north with angles going counterclockwise. This is worth checking.
-* - `setheading(angle)`  
-  - points the turtle toward `angle` degrees, where `0` degrees is directly right and angles go counterclockwise
-
-
-
-
-```
+| Command | Explanation |
+| --- | --- |
+| `forward(length)` | moves the turtle forward `length` pixels |
+| `backward(length)` | moves the turtle backwards `length` pixels |
+| `left(angle)` | turns the turtle left by `angle` degrees (not radians!) |
+| `right(angle)` | turns the turtle right by `angle` degrees |
+| `pendown()` | puts the pen down to draw whenever the turtle moves |
+| `penup()` | puts the pen up so that the turtle can move without drawing |
+| `speed(n)` | sets the turtle speed, where `n` is in `[0, 10]`, with `1` slowest, `n > 1` getting faster, and `0` fastest |
+| `goto(x,y)` | moves the turtle to a point `(x,y)`; the coordinates of the turtle's frames are exactly like the `xy`-plane with `(0,0)` at the center and positive and negative `x` and `y` accepted. There is a chance that your IDE may set `0` degrees to be north with angles going counterclockwise. This is worth checking. |
+| `setheading(angle)` | points the turtle toward `angle` degrees, where `0` degrees is directly right and angles go counterclockwise |
 There are also some fun things that you can do to customize your turtle. None of these are required, but are fun to know:
 
-```{list-table} More Turtle Commands
-:widths: 20 40
-:header-rows: 1
-
-* - Command 
-  - Explanation 
-* - `shape(sh)` 
-  - changes the turtle's shape, options are `"arrow”`, `"turtle”`, `"circle”`, `"square”`, `"triangle”`, `"classic”`
-* - `color(r,g,b)` or `color(colorstring)` 
-  - changes the pen color according to RGB values or a color name 
-* - `bgcolor(r,g,b)` or `bgcolor(colorstring)` 
-  - changes the background color 
-
-```
+| Command | Explanation |
+| --- | --- |
+| `shape(sh)` | changes the turtle's shape, options are `"arrow”`, `"turtle”`, `"circle”`, `"square”`, `"triangle”`, `"classic”` |
+| `color(r,g,b)` or `color(colorstring)` | changes the pen color according to RGB values or a color name |
+| `bgcolor(r,g,b)` or `bgcolor(colorstring)` | changes the background color |
 [For a full list of the commands that you can use, click here](https://docs.python.org/3/library/turtle.html).
 
 So that you can get a feel for how to draw things with `Turtle` graphics, here is an example of drawing a square. Run this code on your own and check that you understand what is happening. It may be useful to lower the speed if you cannot see what is happening.
@@ -222,11 +168,13 @@ Note that the base case is only reached if `min_length > 0`. You can program in 
 4. With the above pseudocode and your `draw_triangle` function, write a recursive function `sierpinski(start_length, min_length)` that will draw the Sierpiński triangle to the accuracy of `min_length`.
 
 5. Test your function with `start_length = 200` and
-> * `min_length = 200`
-> * `min_length = 100`
-> * `min_length = 50`
-> * `min_length = 25`
-> * `min_length = 10`
+
+   - `min_length = 200`
+   - `min_length = 100`
+   - `min_length = 50`
+   - `min_length = 25`
+   - `min_length = 10`
+
 If it is taking too long to do some of the later ones repeatedly, you may skip to the last value. We highly recommend that you set the speed to maximum.
 
 

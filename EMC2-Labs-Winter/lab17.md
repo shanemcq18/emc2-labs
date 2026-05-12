@@ -44,32 +44,60 @@ Let $a$ be a sequence whose associated series converges conditionally.  We want 
 3. Otherwise, add the next negative term and increment `neg_ind`.
 
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Write a function, `rearrange(a, L, N)`, that finds a rearrangement of the alternating series for a given a sequence, `a` (i.e. the series is computed on the sequence `(-1)**n * a(n)`), that converges to a given limit, `L`, using the first `N` terms (starting at `0`). Return both the terms and indices of the rearrangement. Note: `a`, as a function, does not alternate so you must account for the alternating behavior in your code.
 
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 Using your code from the previous exercise, write a function, `plot_rearrangement(a, L, N)`, that computes the rearrangement of `a` converging to `L` with `rearrange(a, L, n)` and plots the partial sums of the alternating series on `a` alongside the partial sums of the rearrangement.
 
-## Task 3a
+:::
+
+:::{admonition} Task 3a
+:class: exercise
+
 
 Use your code from the previous exercise to plot the sequence `a = lambda n: 1 / (n + 1)` alongside its rearrangements for `L = 0` and `N = 100`.
 
-## Task 3b
+:::
+
+:::{admonition} Task 3b
+:class: exercise
+
 
 Use your code from the previous exercise to plot the sequence `a = lambda n: np.log(n + 2) / (n + 2)` alongside its rearrangements for `L in [0, 5, -5, -0.159869]` and `N = 100`.
 
 
-## Task 3c
+:::
+
+:::{admonition} Task 3c
+:class: exercise
+
 
 Use your code from the previous exercise to plot the sequence `a = lambda n: 1 / (n + 1)` alongside its rearrangements for `L = 0` and `N = 1000`. Does this rearrangement appear to converge closer to its limit for the larger value of `N`?
 
-## Task 3d
+:::
+
+:::{admonition} Task 3d
+:class: exercise
+
 
 Use your code from the previous exercise to plot the sequence `a = lambda n: np.log(n + 2) / (n + 2)` alongside its rearrangements for `L in [0, 5, -5, -0.159869]` and `N = 1000`. Does this rearrangement appear to converge closer to its limit for the larger value of `N`?
 
-## Task 4
+:::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Use your code from the previous exercise to see how high and low you can set `L` and still calculate a rearrangement of `a = lambda n: np.log(n + 2) / (n + 2)` that appears to converge to `L`, setting `N` as high as you need.
+
+:::

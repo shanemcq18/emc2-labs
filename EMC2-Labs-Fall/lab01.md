@@ -237,7 +237,9 @@ This will store the value of `x` in `temporary_variable` before reassigning `x`.
 > >>> b=3*(5-b)
 > >>> print(b)
 > ```
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Enter the expression
 
@@ -249,36 +251,18 @@ Remember to use parentheses to ensure that the order of operations is correct.
 Don't just save the numerical value of this expression,
 which is `20`. Save the actual expression with the addition, multiplication, division, subtraction, and parentheses as the variable.
 
+:::
+
 ## Python Types
 
 One important thing you need to understand about Python is how it uses **types**. We can think of a type like a real world category. For example, you may cook a pancake, but you definitely don't cook a waterbottle. You may drink from a waterbottle, but not a pancake. Categories, or types, tell us what we can do with objects. So far, you have seen four out of five main Python types, and we will introduce the last one later in this lab.
 
-```{list-table} Python Types
-:widths: 25 25 25 25
-:header-rows: 1
-
-* - Name
-  - Python Name
-  - Description
-  - Examples
-* - **Integer**
-  - `int`
-  - Numbers without a decimal point, similar to integers in mathematics.
-  - `1`, `24`, `0`, `8675309`
-* - **Floating Point Number**
-  - `float`
-  - Numbers with a decimal point, similar to the real numbers in mathematics.
-  - `3.14`, `1.0`, `123.456`
-* - **Boolean**
-  - `bool`
-  - Either `True` or `False`, pronounced "boo-lee-in", named after [George Boole](https://en.wikipedia.org/wiki/George_Boole)
-  - `True`, `False`
-* - **String**
-  - `str`
-  - Words, sentences, or even individual characters.
-  - `Hello World`, `a`, `BYU!`
-
-```
+| Name | Python Name | Description | Examples |
+| --- | --- | --- | --- |
+| **Integer** | `int` | Numbers without a decimal point, similar to integers in mathematics. | `1`, `24`, `0`, `8675309` |
+| **Floating Point Number** | `float` | Numbers with a decimal point, similar to the real numbers in mathematics. | `3.14`, `1.0`, `123.456` |
+| **Boolean** | `bool` | Either `True` or `False`, pronounced "boo-lee-in", named after [George Boole](https://en.wikipedia.org/wiki/George_Boole) | `True`, `False` |
+| **String** | `str` | Words, sentences, or even individual characters. | `Hello World`, `a`, `BYU!` |
 :::{note}
 You may have noticed that earlier when we evaluated the expression `15 * 3 - 81 / 9`, we got `36.0`, not `36`. This is because the division operator (`/`) always returns a `float` type in Python, even when both dividend and divisor are `int`s.
 
@@ -509,7 +493,9 @@ In these labs, the code you'll turn in for credit will be labeled `Task`.
 Write the code for each Lab 1 task in your `Lab01` notebook.
 For future labs, create a new notebook each time.
 :::
-## Task 2
+::::{admonition} Task 2
+:class: exercise
+
 
 Define a function called `arithmetic2(i, j)` which does exactly the same thing
 as the function `arithmetic(i, j)` defined above, but which only has a `def` line and
@@ -527,7 +513,12 @@ This is a very important step in programming -- don't skip it!
 -13
 ```
 :::
-## Task 3
+
+::::
+
+:::{admonition} Task 3
+:class: exercise
+
 
 Write a function called `absolute_value(x)` which accepts as input a single
 number `x`, and returns the absolute value of `x`.
@@ -539,7 +530,11 @@ number `x`, and returns the absolute value of `x`.
 10
 ```
 
-## Task 4
+:::
+
+:::{admonition} Task 4
+:class: exercise
+
 Define a function called `avg(x,y)` which takes two values `x` and `y` as input, and outputs the mean of `x` and `y`.
 
 ```python
@@ -551,47 +546,27 @@ Define a function called `avg(x,y)` which takes two values `x` and `y` as input,
 
 
 
+:::
+
 ## Compound Conditions
 
 
 To test more complicated conditions it is useful to use the `and` and `or` operators. The statement `P and Q` will return `True` only if both `P` and `Q` are `True`. If either one of, or both of, `P` and
 `Q` are `False`, then the statement `P` and `Q` will return `False`.
 
-```{raw} html
-<div style="text-align: center">
-
-```
 ```python
 (10<11) and (-3>=-12)   # This will return True because both (10<11) and (-3>=-12) are True.
 (10<11) and (-3==-12)   # This will return False because one of the statements is False.
 (10==11) and (-3==-12)  # This will also return False because both of the statements are False.
 ```
-```{list-table} ``And`` Truth Table
-:widths: 33 33 34
-:header-rows: 1
-:align: center
 
-* - P
-  - Q
-  - P and Q
-* - True
-  - True
-  - True
-* - True
-  - False
-  - False
-* - False
-  - True
-  - False
-* - False
-  - False
-  - False
+| P | Q | P and Q |
+| --- | --- | --- |
+| True | True | True |
+| True | False | False |
+| False | True | False |
+| False | False | False |
 
-```
-```{raw} html
-</div>
-
-```
 The statement `P or Q`, on the other hand, will return `True` if at least one of, or both of, `P`
 and `Q` are true. The only situation in which `P or Q` will return False is if both `P` and `Q` are
 False.
@@ -601,37 +576,17 @@ False.
 (10<11) or (-3==-12)    # This will return True because at least one of the statements is True.
 (10==11) or (-3==-12)   # This will return False because both of the statements are False.
 ```
-```{raw} html
-<div style="text-align: center">
 
-```
-```{list-table} ``Or`` Truth Table
-:widths: 33 33 34
-:header-rows: 1
-:align: center
+| P | Q | P or Q |
+| --- | --- | --- |
+| True | True | True |
+| True | False | True |
+| False | True | True |
+| False | False | False |
 
-* - P
-  - Q
-  - P or Q
-* - True
-  - True
-  - True
-* - True
-  - False
-  - True
-* - False
-  - True
-  - True
-* - False
-  - False
-  - False
+:::{admonition} Task 5
+:class: exercise
 
-```
-```{raw} html
-</div>
-
-```
-## Task 5
 
 
 Define a function, called `indicator(lower, upper, n)` which accepts as input
@@ -647,7 +602,11 @@ True
 
 
 
-## Task 6
+:::
+
+::::{admonition} Task 6
+:class: exercise
+
 
 
 Define a function, called `trunc_max(x,y)` which accepts as input two numbers
@@ -678,6 +637,9 @@ else:
       return the second number
 ```
 :::
+
+::::
+
 ## Strings
 A **String** is a sequence of characters, such as words or sentences, surrounded by quotes. You can use either single quotes `'...'` or double quotes `"..."` to define a string.
 
@@ -725,7 +687,9 @@ Strings support a feature called **indexing** which allows you to access individ
 :::{warning}
 Python begins indexing elements of a string starting at `0`. This may seem unusual at first, since humans typically start counting objects with the number `1`.
 :::
-## Task 7
+:::{admonition} Task 7
+:class: exercise
+
 
 Write a function `print_len(my_string)` that takes in a `str` called `my_string`. This function should **print** "`The length of the string is: length`" where "`length`" is the actual length of the string.
 
@@ -736,7 +700,11 @@ The length of the string is: 0
 The length of the string is: 12
 ```
 
-## Task 8
+:::
+
+::::{admonition} Task 8
+:class: exercise
+
 Write a function `last_character(my_string)` that takes in a `str` called `my_string`. It should **return** the last character in the string.
 
 ```python
@@ -749,6 +717,9 @@ Write a function `last_character(my_string)` that takes in a `str` called `my_st
 :::{hint}
 If there are $n$ characters in a string, the index of the last one is $n - 1$.
 :::
+
+::::
+
 ## Lists
 
 So far, we have seen the `int`, `float`, `bool`, and `str` data types.
@@ -776,7 +747,9 @@ Remember, Python indexing starts at 0, not 1.
 :::
 We will learn more about lists in the next lab.
 
-## Task 9
+:::{admonition} Task 9
+:class: exercise
+
 
 Write a function, `median(a)`, that finds the median of sorted list `a` with an odd number of elements.
 
@@ -788,6 +761,8 @@ Write a function, `median(a)`, that finds the median of sorted list `a` with an 
 3.5
 ```
 
+
+:::
 
 ## Review
 

@@ -6,33 +6,61 @@ We have seen many types of sequences so far, and in this lab we will introduce a
 First, we define an iterate. Let $f: \mathbb{R} \to \mathbb{R}$. Define $f^2 = f \circ f$, $f^3 = f \circ f \circ f$, and so on, so that $f^n = f\circ f \circ \dots \circ f$ is the composition involving $n$ copies of $f$. We call $f^n$ the $n$-th *iterate* of $f$. Recall that $\circ$ denotes function composition, so $f^2(x) = (f \circ f) (x) = f(f(x))$.
 
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Let $f(x) = x^2 - 1$. By hand, compute at least the first four terms of the sequence of iterates of $f$ (starting at $x$) for $x = 0$ and $x = 1$.
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 Write a function, `iterate(f, x, n)`, that computes the first `n` iterates of `f` evaluated at `x`. You should consider doing this using bottom-up dynamic programming, i.e. create a list of terms and use the terms you have already computed to compute the next term.
 
-## Task 3
+:::
+
+:::{admonition} Task 3
+:class: exercise
+
 
 Use your code from the previous exercise to write a function, `plot_iterates(f, x, n)`, that plots the first `n` terms of the sequence of iterates evaluated at `x`. Use `plt.plot(a, ".")` where `a` is the terms of your sequence. Remember to label the axes of your plots (use `plt.xlabel("$n$")` and `plt.ylabel("$f_n(x)$")`).
 
-## Task 4a
+:::
+
+:::{admonition} Task 4a
+:class: exercise
+
 
 Use your code from the previous exercises to study the sequences of iterates of $f(x)=x^2-1$ for the fixed input of `x in [1 + i / 10 for i in range(1, 8)]` and describe your results.
 
-## Task 4b
+:::
+
+:::{admonition} Task 4b
+:class: exercise
+
 
 Further explore the sequence from the previous exercise for different positive values of `x` and make a conjecture of what the largest value `x` can take such that this sequence of iterates is bounded.
 
-## Task 4c
+:::
+
+:::{admonition} Task 4c
+:class: exercise
+
 
 Further explore the sequence from the previous exercise for different negative values of `x` and make a conjecture of what the smallest value `x` can take such that this sequence of iterates is bounded.
 
-## Task 5
+:::
+
+:::{admonition} Task 5
+:class: exercise
+
 
 A fixed point of a function, $f$, is some input, $x$, such that $f(x)=x$. Find all fixed points of $f(x)=x^2-1$. How does the sequence of iterates of `f` behave if we take the initial input, $x$, to be a fixed point of $f$? With this new information, modify your conjectures from the previous exercises (if necessary).
+
+:::
 
 ## Complex Numbers
 
@@ -47,7 +75,11 @@ To extend the idea of iterates to the complex plane, we introduce the *Mandelbro
 
 Then, we will define the related *Julia set*. Once again, we will let $f_c(z) = z^2 + c$, but in this case we will fix $c \in \mathbb{C}$. Then the filled Julia set for this $c$ is the set of all $z \in \mathbb{C}$ such that $\{f_c(z), f_c^2(z), f_c^3(z), \dots\}$ is bounded in absolute value. The Julia set for this $c$ is the boundary of the filled Julia set.
 
-## Task 6
+:::{admonition} Task 6
+:class: exercise
+
 
 
 Use [this online tool](https://marksmath.org/visualization/julia2.html) to explore Julia sets for different values of $c$. On the left is the Mandelbrot set. Select a point somewhere in the plane on the left side of the screen, whether within the Mandelbrot set (the black region) or outside of it (the gray and white regions). On the right, the Julia set for that $c$ will be drawn. You can then select a point $z$ on the right side of the screen and it will show the sequence $\{f_c(z), f_c^2(z), f_c^3(z), \dots\}$. Choose a point within the Julia set (this is easier to do if you choose a $c$ within the Mandelbrot set) and observe where the values of the sequence $\{f_c(z), f_c^2(z), f_c^3(z), \dots\}$ are. Now choose a point outside the Julia set. Comment on which sequences appear to be bounded in absolute value and which do not. Press the clear button, and keep playing around with this tool and see what beautiful Julia sets you can create!
+
+:::

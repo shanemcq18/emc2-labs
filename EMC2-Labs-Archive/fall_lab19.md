@@ -71,20 +71,32 @@ Now try using the command
 for some `s<r`.
 This is the rank `s` approximation of `F`.
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Display the rank `s` approximation of the image for several values of `s`. What happens when `s=500`?
 What about `s=100`? What about `s=1`?
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 
 How small can you make `s` and still have the image recognizable? Don't worry about a little graininess.
 
-## Task 3
+:::
+
+:::{admonition} Task 3
+:class: exercise
+
 
 We can store a grayscale image as a list of integers of length `u+r+v`, where `u` (or `v`) is the number of entries
 in `U` (or `V`). Stored that way, the amount of memory that the image takes up is proportional to that number `u+r+v`.
 When we reduce `r` to the smaller number `s`, this reduces `u` and `v` as well to numbers `u(s)` and `v(s)`.
 How does your choice of `s` in part (b) affect the amount of memory required to store the image? Compute the number
 `u(s)+s+v(s)` for the SVD of `Ftest` for each choice of `s` as a percentage of `u+r+v`.
+
+:::

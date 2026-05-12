@@ -139,10 +139,14 @@ The steps to find a value in a BST are as follows:
 
 How long would it take to determine if a value exists in a Python `list`? What about in a `BST`?
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Write a recursive method in your `BST` class called `search(value)` that returns `True` if the value is in the `BST`, and `False` otherwise. Starter code will be given to you on codebuddy.
 
+
+:::
 
 ## Node Characteristics
 
@@ -156,10 +160,14 @@ When working with trees, it can be useful to define metrics for talking about wh
 :align: center
 :alt: Basic tree diagram
 ```
-## Task 2
+:::{admonition} Task 2
+:class: exercise
+
 
 Write a recursive method in your `BST` class called `height()` that calculates the height of your `BST`. Starter code will be given to you on codebuddy.
 
+
+:::
 
 ## Tree Traversal
 
@@ -167,16 +175,22 @@ If we visit all the nodes in a `BST` from left to right (called *in-order traver
 we will see the values in ascending order.
 
 Why this works:
-> - Everything in the left subtree is smaller than the root.
-> - Everything in the right subtree is larger than the root.
-> - Visiting them in this order naturally respects the sorted sequence.
+
+- Everything in the left subtree is smaller than the root.
+- Everything in the right subtree is larger than the root.
+- Visiting them in this order naturally respects the sorted sequence.
+
 This is a direct example of how a BST encodes order in its shape —
 you don't need to sort the list after building it.
 The *shape* of the tree *is* the ordering rule.
 
-## Task 3
+:::{admonition} Task 3
+:class: exercise
+
 
 Write a recursive method in your `BST` class called `inorder_traversal()` that returns a Python `list` of all the data in the `BST` in order. Starter code will be given to you on codebuddy.
+
+:::
 
 ## Balanced and Unbalanced Trees
 
@@ -229,12 +243,18 @@ What happens when a node doesn't have any children on the right or left side?
 This tree is obviously unbalanced at node `2`, but is not unbalanced at node `4`. If the balance value is to be greater than 1, what number should we use as the empty node's height?
 :::
 Conceptual takeaway:
-> - The order you insert items determines the *shape* of the tree.
-> - This shape affects performance.
-## Task 4
+
+- The order you insert items determines the *shape* of the tree.
+- This shape affects performance.
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Write a recursive method in your `BST` class called `is_balanced()` that returns `True` if the tree is balanced and `False` otherwise. Starter code will be given to you on codebuddy.
 
+
+:::
 
 ## Balancing Trees
 

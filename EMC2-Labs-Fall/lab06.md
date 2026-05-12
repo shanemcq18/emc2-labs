@@ -38,7 +38,9 @@ An important operator we haven't covered yet is the mod (modulo) operator. It is
 
 If you want some more help understanding how mod works, open up Colab and try a few examples.
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Write a function `shift_encrypt_letter(n,letter)` that takes an integer `n` and a capital letter (or space character) `letter` and encrypts the letter using the Caesar cipher with key `n`.
 If `letter` is a space character, your function should return it unchanged.
@@ -58,7 +60,11 @@ If `letter` is a space character, your function should return it unchanged.
 ' '
 ```
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 Write a function `shift_encrypt(n,s)` that takes an integer `n` and a string of capital letters (or space characters) `s` and encrypts the string using the Caesar cipher with key `n`.
 Use list comprehension, then string join:
@@ -77,7 +83,11 @@ L = [shift_encrypt_letter(n,let) for let in s]
 ```
 
 
-## Task 3
+:::
+
+:::{admonition} Task 3
+:class: exercise
+
 
 Write a function `shift_decrypt(n,s)` that takes an integer `n` and a string of capital letters `s` and decrypts the string. Can you think of a way to do this by just calling `shift_encrypt` with a different `n`?
 
@@ -87,7 +97,13 @@ Write a function `shift_decrypt(n,s)` that takes an integer `n` and a string of 
 'CAT'
 ```
 
-## Task 4
+:::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Decrypt the coded message `KYV TRBV ZJ R CZV` by running your `shift_decrypt` function for every `n` in
 `1,2,3,...,25` and reading off the only one that makes sense.
+
+:::

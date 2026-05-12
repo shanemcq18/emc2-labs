@@ -6,7 +6,9 @@ $a_n=(-1)^n \frac{n}{n+1} ,$
 the subsequence $\{a_1,a_3,a_5,a_7,... \}$ converges to $-1$, the subsequence $\{a_0,a_2,a_4,a_6,...\}$ converges to $1$, and these are the only two limit points. Other sequences are much harder to understand.  For example, what are the limit points of the sequence $\{\sin(n)\}$?  The purpose of this lab is to write code that will find a subsequence of a given sequence $a$ that converges to a desired limit point.
 
 
-## Task 1a
+::::{admonition} Task 1a
+:class: exercise
+
 
 Consider the sequence `a = lambda n: sin(n)`
 
@@ -17,27 +19,46 @@ Can you use the theorems from Chapter 11 to prove that the sequence has a limit 
 :::{hint}
 If you don't remember how to plot a sequence, check out {doc}`lab03` again.
 :::
-## Task 1b
+
+::::
+
+:::{admonition} Task 1b
+:class: exercise
+
 
 Repeat Task 1a for the sequence `b = lambda n: sin(pi * n / 20)`, calling your function `plot_seq_b()`.
 
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 Write a function, `limit_point_idxs(a, L, N, tol)`, that takes as input a sequence function, `a`, a limit, `L`, a maximum index, `N` (defaulting to `10000`), and an error bound, `tol` (defaulting to `0.1`), that finds all the indices, `0 <= n < N`, such that `|a(n) - L| < tol`.
 
 
-## Task 3
+:::
+
+:::{admonition} Task 3
+:class: exercise
+
 
 Use your code from the previous exercises to write a function, `plot_limit_idxs(a, L, N, tol)`, that takes as input a sequence function, `a`, a limit, `L`, a maximum (exclusive) index, `N` (defaulting to `10000`), and an error bound, `tol` (defaulting to `0.1`), that plots the sequence on the indices that fall within the error bound alongside a line representing the limit. Limit the y-axis of the plot to `[L - tol, L + tol]` and make sure to label your axes. Test your code on `a = lambda n: (-1) **n / (n + 1)`, `L = 0`, `N = 150`, `tol = 1e-2`.
 
 
 
-## Task 4
+:::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Using your code from Task 3, further explore the sequences from Task 1a and Task 1b and modify your conjecture about the set of limit points if necessary. Test your program on values that you think may not be limit points. Try modifying `tol` to be smaller and see if you still find a subsequence.
 
 
+
+:::
 
 ## Enumerating the Rationals
 
@@ -50,11 +71,20 @@ For every denominator $q$, there are only finitely many rationals $0 \leq \frac{
 ```{math}
 \frac{0}{1},\, \frac{1}{1},\, \frac{1}{2},\, \frac{1}{3},\, \frac{2}{3},\, \frac{1}{4},\, \frac{3}{4},\, \frac{1}{5},\, \frac{2}{5},\, \frac{3}{5},\, \frac{4}{5},\, \dots
 ```
-## Task 5
+:::{admonition} Task 5
+:class: exercise
+
 
 Write a function `enumerate_rationals` that accepts an integer `n >= 1` and returns a list with the enumeration detailed above of the rationals with denominator less than or equal to `n`.
 
 > Hint: a fraction $p/q$ is in lowest terms if and only if $\gcd(p,q) = 1$. You may use the `math` library's `gcd` function, but you are encouraged to use the gcd function that you created last semester.
-## Task 6
+
+:::
+
+:::{admonition} Task 6
+:class: exercise
+
 
 Use your code from the previous tasks to find the limit points of the enumerated rationals by plotting subsequences against possible limits (Task 3) and make conjecture about what the set of limit points is for this sequence. Once again, you do not have to write a formal proof for (b), but consider if a proof is possible given the theorems that you have. Consider the following question to drive your search. Is every rational in this range, `[0, 1]`, a limit point? What about irrational numbers?
+
+:::

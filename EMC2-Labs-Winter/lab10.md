@@ -101,8 +101,12 @@ Whenever you create a method in a class, it needs to have `self` as the first ar
 :::{note}
 Methods, like functions, are called with `()`, while attributes, like variables, are not called with `()`.
 :::
-## Task 1: Rectangle
+:::{admonition} Task 1: Rectangle
+:class: exercise
+
 Create a `Rectangle` class that has instance variables `length`, and `width`. Write methods called `area` and `perimeter` that compute the area and perimeter of the rectangle.
+
+:::
 
 ## Inheritance
 
@@ -163,9 +167,13 @@ Erased last line
 
 This was an introduction to what classes can do and there is a lot of functionality we didn't cover. What is important to understand right now is that classes are an excellent way to reduce code duplication when representing real world objects.
 
-## Task 2: Square
+:::{admonition} Task 2: Square
+:class: exercise
+
 Create a `Square` class with an instance variable `length`. `Square` inherits from the `Rectangle` class you wrote in Task 1. Make sure you can find the `area` and `perimeter` of a `Square`!
 
+
+:::
 
 ## Dunder Methods
 
@@ -276,10 +284,14 @@ def __radd__(self, topping):
 ```
 As soon as this is implemented, addition is commutative for `Sandwich`es.
 :::
-## Task 3: Vector
+:::{admonition} Task 3: Vector
+:class: exercise
+
 Write a class called `Vector` that takes in a Python list. `Vector` will implement vector addition and scalar multiplication using Dunder methods `__add__` and `__mul__`. These operations should return a new `Vector` as the result. Also have a `__str__` method that prints the array as a string.
 
 Source code will be given on CodeBuddy.
+
+:::
 
 ## Application: Binary
 Binary is how computers represent numbers. We are used to a decimal ("dec" meaning ten) representation where there are ten symbols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. In binary, there are only two symbols: 0 and 1.
@@ -304,54 +316,25 @@ It is helpful to use the modulo operator `%` to get the remainder and the floor 
 :::
 As an example, to convert 2319 to binary we do:
 
-```{list-table} Algorithm
-:widths: 50 25 25
-:header-rows: 1
-
-* - Operation
-  - Quotient
-  - Remainder
-* - 2319/2
-  - 1159
-  - 1
-* - 1159/2
-  - 579
-  - 1
-* - 579/2
-  - 289
-  - 1
-* - 289/2
-  - 144
-  - 1
-* - 144/2
-  - 72
-  - 0
-* - 72/2
-  - 36
-  - 0
-* - 36/2
-  - 18
-  - 0
-* - 18/2
-  - 9
-  - 0
-* - 9/2
-  - 4
-  - 1
-* - 4/2
-  - 2
-  - 0
-* - 2/2
-  - 1
-  - 0
-* - 1/2
-  - 0
-  - 1
-
-```
+| Operation | Quotient | Remainder |
+| --- | --- | --- |
+| 2319/2 | 1159 | 1 |
+| 1159/2 | 579 | 1 |
+| 579/2 | 289 | 1 |
+| 289/2 | 144 | 1 |
+| 144/2 | 72 | 0 |
+| 72/2 | 36 | 0 |
+| 36/2 | 18 | 0 |
+| 18/2 | 9 | 0 |
+| 9/2 | 4 | 1 |
+| 4/2 | 2 | 0 |
+| 2/2 | 1 | 0 |
+| 1/2 | 0 | 1 |
 Now we write the remainders starting from the bottom. $100100001111$ is the result which is what we had above.
 
-## Task 4: Binary
+:::{admonition} Task 4: Binary
+:class: exercise
+
 Write a class called `Binary` that takes in an integer.
 
 * When a `Binary` object is printed, it should display the binary representation as a string of 1's and 0's.
@@ -359,3 +342,5 @@ Write a class called `Binary` that takes in an integer.
 * `Binary` objects can be subtracted from one another to produce another `Binary` object. It should raise a `ValueError` if the result would be negative (negative numbers are a little more complicated in binary, look at [this](https://en.wikipedia.org/wiki/Two%27s_complement)  if you are curious).
 * `Binary` objects can be added with one another to produce another `Binary` object.
 * `Binary` objects can be compared with one another for equality (the `==` operator)
+
+:::

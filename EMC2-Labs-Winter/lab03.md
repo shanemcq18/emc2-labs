@@ -47,7 +47,9 @@ a_n = (-1)^n \frac{n}{2n + 1}
 for `0 <= n <= 19` and the `x` coordinates are given by the list `[0,1,...,19]`.
 
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Write a function, `plot_monotonic()`, to plot the sequence
 
@@ -58,6 +60,8 @@ for $n = 0,1,\ldots,19$ using the `sqrt` function from the `math` library. Title
 
 Does the sequence appear to converge? If so, to what limit? Compare with Example 8.2 in the text.
 
+
+:::
 
 ## Customizing graphs
 
@@ -93,7 +97,9 @@ plt.show()
 ```
 We will create two different plots for the same function rule, one using the natural numbers as the domain and one using an interval of the real line as the domain.
 
-## Task 2
+:::{admonition} Task 2
+:class: exercise
+
 Plot the sequence
 
 ```{math}
@@ -101,7 +107,11 @@ a_n = (1-\tfrac{1}{n})^n
 ```
 for `1 <= n <= 20`. Use list comprehension to create the sequence. Add a title, change the color and/or style, label the `x` and `y` axes, and play with the `x` and `y` limits until you are satisfied with the output. Does it look like this sequence has a limit?
 
-## Task 3
+:::
+
+:::{admonition} Task 3
+:class: exercise
+
 
 We will create two different plots for the same function rule, one using the natural numbers as the domain and one using an interval of the real line as the domain.
 
@@ -116,6 +126,7 @@ How can you customize this plot and your plot from part (a) to emphasize that on
 
 
 
+:::
 ### The Fibonacci Sequence
 
 Consider the Fibonacci sequence defined recursively by
@@ -123,16 +134,34 @@ Consider the Fibonacci sequence defined recursively by
 ```{math}
 F_0 = 0, F_1 = 1, \text{ and } F_n = F_{n-1} + F_{n-2} \text{ for all $n \geq 2$}.
 ```
-## Task 4
+
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Write a function `fib_list(N)` that generates a list of the first `N` terms of the Fibonacci sequence, starting with $F_0$.
 
 
-## Task 5
+:::
+
+:::{admonition} Task 5
+:class: exercise
+
 Let $r_n = \dfrac{F_{n+1}}{F_{n}}$ for $n \geq 1$. Write a function `fib_ratios(N)` that generates a list of the first `N` terms of the sequence of ratios, starting with $r_1$. Plot this sequence of ratios for `N=20`.
 
-## Task 6
+:::
+
+:::{admonition} Task 6
+:class: exercise
+
 Make a conjecture about the limit of the sequence $(r_n)$. Plot this limit as a horizontal line. You can plot multiple sequences (or functions) on the same axes by making another call to `plt.plot(b)` for some other sequence `b`. Make the horizontal line look connected (not like discrete points) and a different color than the $(r_n)$.
 
-## Task 7
+:::
+
+:::{admonition} Task 7
+:class: exercise
+
 Repeat this process with more terms and adjust your `x` and `y` limits accordingly. Does your horizontal line still appear to be the limit? If not, change it to match your new conjecture. What do you think the limit of the sequence $(r_n)$ equals?
+
+:::

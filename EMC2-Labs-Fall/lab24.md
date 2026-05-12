@@ -34,11 +34,17 @@ Any degree $p$ polynomial function $f_p$ can be identified by a set of coefficie
 ```{math}
 f_p(x) = c_0  +  c_1 x + \ldots + c_{p-1}x^{p-1} + c_p x^p = \sum_{j=0}^p c_j x^j. 
 ```
-### Task 1
+:::{admonition} Task 1
+:class: exercise
+
 Write a function `compute_data_matrix(x, p)` that accepts an input vector `x` and a non-negative integer power `p`, and returns the corresponding polynomial data matrix as a `NumPy` array.
 
 
-### Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 Use the following plotting code to be able to visualize a dataset of inputs `x` and outputs `y`.:
 
 ```python
@@ -88,7 +94,11 @@ The least squares fit line then is defined as the degree $p$ polynomial
 which when applied to our set of inputs in the data matrix looks like $f = X \hat{c} \in \mathbb{R}^n$.
 
 
-### Task 3
+:::
+
+::::{admonition} Task 3
+:class: exercise
+
 Replace any `...` to complete the function `plot_least_squares(x, y, p)` that will compute the least squares solution line and plot it against the data.
 (Equations for $\hat{c}$ and $f$ are given above.)
 
@@ -130,6 +140,9 @@ Note that this still solves the normal equations, but it is more numerically sta
 You will need to view the documentation for `numpy.linalg.lstsq` to see how to use it.
 See [the NumPy reference here](https://numpy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html) .
 :::
+
+::::
+
 ## Computing Linear Regression for Diabetes Data
 
 We now turn to a "real-world" regression task of predicting diabetes progression based on patient information and medical measurements.
@@ -157,7 +170,9 @@ X = \begin{pmatrix}
 and output vector $y = (y_1, y_2, \ldots, y_n) \in \mathbb{R}^n$.
 
 
-### Task 4
+:::{admonition} Task 4
+:class: exercise
+
 Write a function `compute_diabetes_fit()` that computes the least squares fit coefficient vector $\hat{\beta} \in \mathbb{R}^{d+1}$ that is computed by `linalg.lstsq()`.
 You may find the following code and guidelines to be useful:
 
@@ -176,7 +191,11 @@ corresponding input variable and the output data, conditioned on the other data.
 holding all else equal, a small change in the $j^{th}$ feature will lead to a large, positive change in the output.
 In context of this dataset, that means if the $\hat{\beta}$ of the age is positive and large, then a small change in age will lead to a large, positive change in the disease progression.
 
-### Task 5
+:::
+
+:::{admonition} Task 5
+:class: exercise
+
 Extend the capability of your previous function `compute_diabetes_fit()` to perform the following:
 
 1. Extract the feature names of this dataset (`feature_names = diabetes_data.feature_names`)
@@ -188,3 +207,5 @@ printing out
 ```python
 >>> print(diabetes_data.DESCR)
 ```
+
+:::

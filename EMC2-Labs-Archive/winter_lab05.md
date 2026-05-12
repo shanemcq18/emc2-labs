@@ -42,16 +42,28 @@ The next three figures are illustrations of De Casteljau’s Algorithm for 3 poi
 :width: 95 %
 :align: center
 ```
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Implement De Casteljau’s algorithm by writing a function `decasteljau(t, p)` that returns the location of a point on the Bézier curve determined by `p` at time `t`.
 Your function should accept a `m x 2` array representing `m` control points, and a time `t0` at which to evaluate the curve. This looks much more scary then it actually is!
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 Modify your code for De Casteljau's Algorithm, `decasteljau(t, p)`, to handle multiple time values (`t` as an `np.ndarray` input).
 
-## Task 3
+:::
+
+:::{admonition} Task 3
+:class: exercise
+
 
 Create a function `plot_bezier(p)` to plot a Bézier curve in 2-D. Your function should accept a `m x 2` array representing `m` control points.
 Use what you learned in {doc}`lab01` (i.e., `linspace()`, plotting tools) to create a curve that looks smooth.
+
+:::

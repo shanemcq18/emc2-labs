@@ -14,7 +14,9 @@ This can be expanded to two dimensions (`x`, `y`), to approximate three dimensio
 ```
 Riemann sums of three dimensions ore more are difficult to visualize. Check out [this Wikipedia article](https://en.wikipedia.org/wiki/Tesseract) about Tesseracts if you want to learn more about four dimensional objects.
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Write a function, `riemann_sum_1D(f, x_min, x_max, N, method)`, that takes as input a function of one variable (`x`), `f`, a minimum value of `x`, `x_min`, a maximum value of `x`, `x_max`, a number of sub-intervals to compute, `N`, and a Riemann method to use, `method` (`"left"`, `"right"`, `"mid"`), and computes the Riemann approximation of `f` on the input space `[x_min, x_max]`.
 
@@ -27,7 +29,11 @@ where `Δx = (xMax - xMin)/N`.
 
 Raise a `ValueError` if the method is not `"left"`, `"right"`, or `"mid"` (use the error message `f"Error: method ({method}) must be \"left\", \"right\", or \"mid\""`).
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 Write a function, `riemann_sum_2D(f, x_min, x_max, y_min, y_max, N, method)`, that takes as input a function of two variables (`x` and `y`), `f`, a minimum value of `x`, `x_min`, a maximum value of `x`, `x_max`, a minimum value of `y`,  `y_min`, a maximum value of `y`, `y_max`, a number of sub-intervals to compute, `N`, and Riemann method to use, `method` (`"left"`, `"right"`, `mid`).
 
@@ -40,7 +46,11 @@ where `Δx = (xMax - xMin)/N`, `Δy = (yMax - yMin)/N`
 
 Raise a `ValueError` if the method is not `"left"`, `"right"`, or `"mid"` (use the error message `f"Error: method ({method}) must be \"left\", \"right\", or \"mid\""`).
 
-## Task 3
+:::
+
+:::{admonition} Task 3
+:class: exercise
+
 Using your function from Task 2, use the midpoint method to calculate the Riemann sums for `N=10` and `N=20` for the following functions and domains:
 
 #. $f(x,y) = x \cdot sin(x \cdot y)$ on $[0, pi] \times [0, pi]$
@@ -58,11 +68,19 @@ Riemann sum: "sum"
 ```
 Replace everything in `""` with the actual value. Use `f"{number:.5f}"`` to show only the first five decimal places of the sum.
 
-## Task 4
+:::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Consider the integral of $f(x, y) = x \sin(x + y)$ on the rectangle $[0, \pi/6] \times [0, \pi/3]$. First calculate the exact value of this integral by hand. Then make a plot that shows the error of the midpoint Riemann integral approximation as $N$ ranges from $1$ to $100$. Remember to give your graph a title and label your axes.
 
-## Task 5
+:::
+
+:::{admonition} Task 5
+:class: exercise
+
 
 Write a function, `riemann_sum_3D(f, x_min, x_max, y_min, y_max, z_min, z_max, N, method)`, that takes as input a function of three variables (`x`, `y`, and `z`), `f`, a minimum value of `x`, `x_min`, a maximum value of `x`, `x_max`, a minimum value of `y`,  `y_min`, a maximum value of `y`, `y_max`, a minimum value of `z`, `z_min`, a maximum value of `z`, `z_max`, a number of sub-intervals to compute, `N`, and Riemann method to use, `method` (`"left"`, `"right"`, `"mid"`).
 
@@ -75,7 +93,11 @@ where `Δx = (xMax - xMin)/N`, `Δy = (yMax - yMin)/N`, `Δz = (zMax - zMin)/N`.
 
 Raise a `ValueError` if the method is not `"left"`, `"right"`, or `"mid"` (use the error message `f"Error: method ({method}) must be \"left\", \"right\", or \"mid\""`).
 
-## Task 6
+:::
+
+:::{admonition} Task 6
+:class: exercise
+
 
 Using your function from Task 5, use the midpoint method to calculate the Riemann sums for `N = 10` and `N = 20` for the following function and domain:
 
@@ -94,8 +116,14 @@ Riemann sum: "sum"
 Replace everything in `""` with the actual value. Use `f"{number:.5f}"`` to show only the first five decimal places of the sum.
 
 
-## Task 7
+:::
+
+:::{admonition} Task 7
+:class: exercise
+
 
 Write a function, `riemann_sum(f, x_min, x_max, N, method)`, that takes as input a function of an n-dimensional variable (`x`), `f`, a vector of minimum values of the components of `x`, `x_min`, a vector of maximum values of the components of `x`, `x_max`, a number of sub-intervals to compute, `N`, and Riemann method to use, `method` (`"left"`, `"right"`, `"mid"`).
 
 Raise a `ValueError` if the method is not `"left"`, `"right"`, or `"mid"` (use the error message `f"Error: method ({method}) must be \"left\", \"right\", or \"mid\""`).
+
+:::

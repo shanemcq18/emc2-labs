@@ -15,15 +15,23 @@ and iterate until $|x_k - x_{k-1}|$ is satisfactorily small. Note that this proc
 
 Newton's method for optimization works well to locate minima when $f''(x) > 0$ on the entire domain. However, it may fail to converge to a minimizer if $f''(x) \leq 0$ for some portion of the domain. If $f$ is not unimodal, the initial guess $x_0$ must be sufficiently close to a local minimizer in order to converge.
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Let $f : \mathbb R \to \mathbb R$.
 Adapt your code for Newton's method from {doc}`lab11` to write a function, `newton(df, d2f, x0, tol, maxiter)`, that accepts the first and second derivatives of a function, `df` and `d2f`, a starting point, `x0` (defaulting to `0`), a stopping tolerance, `tol` (defaulting to `1e-8`), and a maximum number of iterations, `maxiter` (defaulting to `100`). Implement Newton's method using the formula above to locate a local optimizer. Return the approximate optimizer, whether or not the algorithm converged, and the number of iterations computed.
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 Test your function from Task 1 by minimizing `x ** 2 + sin(5 * x)` with various initial guesses, tolerances, and iteration constraints. Compare your results to `opt.newton()`, which implements the root-finding version of Newton's method.
 
+
+:::
 
 ## Descent Methods
 
@@ -81,14 +89,20 @@ To avoid this problem, the step size $\alpha_k$ can be chosen in a few ways.
 \alpha_k = \mathrm{argmin}_{\alpha} f(\mathbf x_k - \alpha D f (\mathbf x_k)^T)
 ```
 > Using this choice is called *exact steepest descent*. This option is more expensive per iteration than the above strategy, but it results in fewer iterations before convergence.
-## Task 3
+:::{admonition} Task 3
+:class: exercise
+
 
 Write a function, `grad_descent_const(df, x0, a, tol, maxiter)` that accepts the derivative of an objective function, `df`, an initial guess, `x0`, a constant step size, `a`, a convergence tolerance, `tol`, defaulting to `1e-8`, and a maximum number of iterations, `maxiter`, defaulting to `100`, and computes the minimizer via the constant method of steepest descent (gradient descent with constant step size). Return the approximate minimizer, whether or not the algorithm converged, and the number of iterations computed.
 
 Why does satisfying the convergence condition not guarantee that we converged sufficiently close to a minimizer for this version of gradient descent?
 
 
-## Task 4
+:::
+
+::::{admonition} Task 4
+:class: exercise
+
 
 Adapt your code from the previous exercise to write a function, `grad_descent_exact(f, df, x0, tol, maxiter)`, that takes as input a differentiable function, `f`, its derivative, `df`, an initial guess, `x0`, an allowed error tolerance, `tol`, and a maximum number of iterations, `maxiter`, and uses exact gradient descent to find a minimizer for `f`. Return the minimizer, whether the algorithm converged within the error tolerance, and the number of iterations computed.
 
@@ -97,7 +111,12 @@ Specifically, compute `a` for each step of the algorithm by finding the minimize
 :::{hint}
 `scipy.optimize.minimize_scalar(f).x` returns the `x` value for the local minimum of a function `f`.
 :::
-## Task 5
+
+::::
+
+:::{admonition} Task 5
+:class: exercise
+
 
 ```{image} _static/figures/rosen_3d.png
 :align: center
@@ -119,7 +138,11 @@ Write a function, `plot_convergence(a, b)`, that takes as input the constants fo
 
 Notice that your graph ought to look approximately linear i.e. like a step function that is bounded above by a linear function for the given axes.
 
-## Task 6
+:::
+
+:::{admonition} Task 6
+:class: exercise
+
 
 Create a function, `plot_rosenbrock_gradient_descent(starting_position, learning_rate, tol, maxiter, a, b)` that takes as input the starting position as a NumPy array, `starting_position`, the learning rate, `learning_rate`, the tolerance, `tol`, the maximum number of iterations, `maxiter`, the value of `a`, and the value of `b`, and plots the progress of gradient descent on the Rosenbrock function.
 
@@ -136,3 +159,5 @@ You will need to modify your `grad_descent_const()` function to return the path 
 * Label the x-axis as "x" and y-axis as "y"
 * Set xlim to `[-2, 2]` and ylim to `[-1, 3]`
 * Include a legend
+
+:::

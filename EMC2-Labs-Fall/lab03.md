@@ -35,10 +35,13 @@ def functionName(parameter1, parameter2, parameter3):
     # the actual code replaces "pass"
     pass    # pass makes it so no error's occur when an empty function is run
 ```
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Complete all of the following functions according to the instructions in their docstrings. This will be a review of the past two Python labs. Feel free to look up the documentation and/or examples for anything you've forgotten or haven't learned yet. (For example, it will probably help to look up the modulo operator.)
 
+:::
 ### Function: `last_two_deleted`
 
 ```python
@@ -151,7 +154,10 @@ def backward(word):
 ```
 
 
-## Task 2
+
+:::{admonition} Task 2
+:class: exercise
+
 
 Use some of your previously written functions to help make this more complicated function.
 
@@ -184,7 +190,11 @@ def int_to_str26(message):
 `TESTWORD'
 ```
 
-## Task 3
+:::
+
+:::{admonition} Task 3
+:class: exercise
+
 
 Now do the same, but in reverse.
 
@@ -219,7 +229,11 @@ def str_to_int26(message):
 ```
 
 
-## Challenge Problems
+:::
+
+:::{admonition} Challenge Problems
+:class: exercise
+
 
 Visit [projecteuler.net](https://projecteuler.net/). Here you will find many programming challenges that will help you hone your skills (click on Archives). If you would like to, make a free account to track your progress.
 If there is still time remaining, try to solve the following challenge problems, (no credit).
@@ -231,3 +245,5 @@ If there is still time remaining, try to solve the following challenge problems,
 3. Project Euler \#6
 
 4. Project Euler \#9
+
+:::

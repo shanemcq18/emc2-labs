@@ -117,7 +117,9 @@ This will capitalize every word in a list
 ['HELLO', 'WORLD']
 ```
 :::
-## Task 1: Basic Functions
+:::{admonition} Task 1: Basic Functions
+:class: exercise
+
 Write each function as a lambda function. Assign each to the variables `mean`, `sigmoid`, and `prime_count_approx`.
 
 ```{math}
@@ -135,7 +137,12 @@ Write each function as a lambda function. Assign each to the variables `mean`, `
 
 f(x) = \frac{x}{\log(x)}
 ```
-## Task 2: Sort
+
+:::
+
+::::{admonition} Task 2: Sort
+:class: exercise
+
 `sorted(a, key)` is a built-in python function that sorts an iterable (something you can iterate over like a list, string, etc.). `a` is the iterable, and `key` is a function that specifies how the iterable should be sorted.
 
 Here is an example of sorting a list of tuples by the second element.
@@ -152,6 +159,8 @@ The `sorted()` function works great for lists, but has limitations when it comes
 :::
 Write a function `sort_list(a)` that takes in `a` which is a Python `list` of `tuples` and returns the list sorted by the mean of each tuple.
 Make sure to assign your `lambda` function to the `key` parameter of `sorted()`!
+
+::::
 
 ## More Operators
 You are familiar with simple operators like `+`, `-`, and `*`. It is common to take a variable and set it to itself added, subtracted, or multiplied with another number. Python has a syntax for this:
@@ -234,8 +243,12 @@ Got a Zero Division Error
 0
 ```
 :::
-## Task 3: Matrix Multiplication
+:::{admonition} Task 3: Matrix Multiplication
+:class: exercise
+
 Write a function `mat_mul(a, b)` that takes in `numpy.ndarray`s `a` and `b` and performs matrix multiplication on them. `mat_mul` should return the string `Error: matrix a with shape (n,m) is not compatible with matrix b with shape (n,m)` when the matrices are of incompatible shapes.
+
+:::
 
 ## Type Declarations in Functions
 
@@ -317,10 +330,14 @@ Here are some other useful functions and methods for dictionaries:
 - `my_dict.values()` gets all the values from the dictionary
 - `my_dict.items()` gets a list of tuples containing the all the keys and values (used in the example above)
 
-## Task 4: Sorting a Dictionary
+:::{admonition} Task 4: Sorting a Dictionary
+:class: exercise
+
 Write a function `sort_dict(d)` which sorts a dictionary of student's scores from highest to lowest.
 `d` is a dictionary that maps from a student's name (`str`) to their percentage in the class (`float`).
 `sort_dict(d)` should return a list of tuples containing the student's name and their grade i.e., `[("peter", 97.5), ("james", 96.1), ("john", 94.8)]`.
+
+:::
 
 ## Importing
 At this point, you are familiar with how to import a module or package in python using
@@ -497,13 +514,17 @@ array([[[ 1,  6],
     [[ 5, 10],
         [ 6, 11]]])
 ```
-## Task 5: Images
+:::{admonition} Task 5: Images
+:class: exercise
+
 
 Write three functions (listed below). Each should take in three NumPy arrays of shape `(n, m)` and return an array of the specified shape
 
 * `rgb_image_one(r, g, b)` returns an array of shape `(n, m, 3)`
 * `rgb_image_two(r, g, b)` returns an array of shape `(n, 3, m)`
 * `rgb_image_three(r, g, b)` returns an array of shape `(3, n, m)`
+
+:::
 
 ## Array Broadcasting
 
@@ -618,7 +639,9 @@ array([[ 28,  46,  64],
 
 Which returns a matrix---definitely not what you were intending. This is one of the blessings and curses of array broadcasting. In the currency example, creating a matrix from two vectors is exactly what we wanted, but in this example, if we had wrongly assumed we could add a "row" vector and "column" vector as we would normally, we would end up with very unexpected results.
 :::
-## Task 6: Normalization
+:::{admonition} Task 6: Normalization
+:class: exercise
+
 Normalization is a basic statistical method to scale data so all of the points lie between 0 and 1. Here is the formula:
 
 ```{math}
@@ -626,3 +649,5 @@ x_{\text{norm}} = \frac{x - x_{min}}{x_{max} - x_{min}}
 ```
 You are given data on recent college graduates and their median earnings based on their major.
 Use array broadcasting to create a normalized set of median earnings. The data is given in CodeBuddy.
+
+:::

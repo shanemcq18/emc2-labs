@@ -81,12 +81,16 @@ This one functions the same as a list of lists where every row is a row in the `
 >>> df4 = pd.DataFrame(arr, columns=['Name', 'Age', 'City'])
 ```
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Make a Pandas `DataFrame` named `basketball_games` with columns `["Team Name", "Game 1 Score", "Game 2 Score", "Game 3 Score"]`.
 For the `"Team Name"` column, use this list of names `["Florida", "Houston", "Duke", "Texas Tech", "BYU"]`.
 For each of the scores generate a random integer between 1 and 100.
 
+
+:::
 
 ## CSV Files
 
@@ -121,9 +125,13 @@ If you want to save to a CSV file use `df.to_csv(filename, index=False)`.
 We use `index=False` to avoid saving the row numbers as another column.
 Other file types that Pandas can easily read include Excel, JSON, HTML, Parquet, SQL, and Pickle.
 
-## Task 2
+:::{admonition} Task 2
+:class: exercise
+
 
 Read the CSV file named "global_air_pollution_dataset.csv" and save it as a Pandas `DataFrame` titled `pollution_df`.
+
+:::
 
 ## Accessing Data
 Now that we have our DataFrame we can start accessing the data within.
@@ -262,12 +270,16 @@ When working with real-world data it is **very common** to have missing values.
 It is important to know functions that work with this type of data.
 While it is not the focus of this lab, an important step in data science involves preparing data (e.g., dealing with NaNs) for future analysis.
 :::
-## Task 3
+:::{admonition} Task 3
+:class: exercise
+
 
 Load `pollution_df`.
 First, reindex the columns so that `AQI Value` and `AQI Category` are the first two columns and all other columns maintain their order.
 Next, sort the `DataFrame` in descending order based on their `AQI Value`.
 Finally, reset all values in the `Ozone AQI Value` column to 0.
+
+:::
 
 ## Basic Data Manipulation
 
@@ -369,12 +381,16 @@ Whenever you use these arguments make sure to surround the mask in `()`.
 3  Carter   Male   22     91              95         100
 4   James   Male   23     78              88         100
 ```
-## Task 4
+:::{admonition} Task 4
+:class: exercise
+
 
 Load `pollution_df`.
 Create a new column `Combined AQI Value` which is the sum of the `AQI Value`, `CO AQI Value`, `Ozone AQI Value`, `NO2 AQI Value`, and `PM2.5 AQI Value` columns.
 Change the `AQI Category` to "terrible" where `AQI Value` and `PM2.5 AQI Value` are both greater than 100.
 
+
+:::
 
 ## Basic Statistical Functions
 
@@ -427,6 +443,10 @@ Here are some other useful statistical functions.
 - `df.pct_change()` - Percentage change between elements
 - `df.skew()` - Sample skewness of each column
 
-## Task 5
+:::{admonition} Task 5
+:class: exercise
+
 
 Using the `pollution_df`, find the country with the highest average for the `AQI Value` column and set the corresponding variable to that country and average.
+
+:::

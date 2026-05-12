@@ -19,33 +19,24 @@ When we talk about unit balls we are talking about all the points that are dista
 Our intuition may lead us to believe that as dimensionality increases, the volume of a unit ball should also increase.
 We have good reason for that looking at the following table.
 
-```{list-table}
-:widths: 25 50 25
-:header-rows: 1
-
-* - Dimension
-  - Unit Ball
-  - Volume
-* - 1
-  - $[-1,1]$
-  - $2$
-* - 2
-  - $\{ (x,y) : x^2+y^2 \leq 1 \}$
-  - $\pi$
-* - 3
-  - $\{ (x,y,z) : x^2+y^2+z^2 \leq 1 \}$
-  - $\frac 43\pi$
-
-```
+| Dimension | Unit Ball | Volume |
+| --- | --- | --- |
+| 1 | $[-1,1]$ | $2$ |
+| 2 | $\{ (x,y) : x^2+y^2 \leq 1 \}$ | $\pi$ |
+| 3 | $\{ (x,y,z) : x^2+y^2+z^2 \leq 1 \}$ | $\frac 43\pi$ |
 Surprisingly this trend does not continue as $n$ increases.
 
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Check to see the volume of the unit ball actually decreases as $n$ gets larger by using your code from Task 1 in the Monte Carlo integration lab.
 Write a function, `plot_ball_volumes()`, that creates a plot with dimension on the `x`-axis and the volume on the `y`-axis. Let the dimension of the space vary from `n = 1` to `n = 20`. Remember to label your plot and axes. Make sure to use a large enough number of samples `N`.
 For what value of `n` is the volume of the unit sphere the highest?
 
+
+:::
 
 ## Fact 2
 
@@ -58,35 +49,21 @@ First, consider an `n`-dimensional unit cube (i.e., a cube-like shape in `n`-dim
 Suppose you were asked to draw a cube centered inside that `n`-dimensional cube that contained half of the volume.
 What would be the length of the side of that cube? For a few values of `n` we have the following table.
 
-```{list-table}
-:widths: 25 50 25
-:header-rows: 1
+| Dimension | Side Length | Approximate Value |
+| --- | --- | --- |
+| 1 | $1/2$ | $0.5$ |
+| 2 | $1/\sqrt{2}$ | $0.7071$ |
+| 3 | $1/\sqrt[3]{2}$ | $0.7938$ |
+| 4 | $1/\sqrt[4]{2}$ | $0.8409$ |
+| 5 | $1/\sqrt[5]{2}$ | $0.8706$ |
+:::{admonition} Task 2
+:class: exercise
 
-* - Dimension
-  - Side Length
-  - Approximate Value
-* - 1
-  - $1/2$
-  - $0.5$
-* - 2
-  - $1/\sqrt{2}$
-  - $0.7071$
-* - 3
-  - $1/\sqrt[3]{2}$
-  - $0.7938$
-* - 4
-  - $1/\sqrt[4]{2}$
-  - $0.8409$
-* - 5
-  - $1/\sqrt[5]{2}$
-  - $0.8706$
-
-
-```
-## Task 2
 
 Write a function, `plot_side_lengths()` that plots the following: for $n=1, \ldots, 30$ plot the dimension on the $x$-axis and the side length of the $n$-dimensional cube that has exactly half the volume of a unit $n$-dimensional cube.
 
+
+:::
 
 ## Fact 3
 
@@ -100,7 +77,9 @@ If you think about this truth in lower dimensions (i.e., 2 or 3 dimensions) it d
 
 As you may have noticed from Facts 1 and 2, drawing points inside a sphere is hard to do efficiently, so for this fact we will consider points on the surface of a sphere. First, we will write some code that generates points uniformly on a `n`-dimensional sphere.
 
-## Task 3a
+:::{admonition} Task 3a
+:class: exercise
+
 
 Write a function, `generate(n, d)`, that uniformly samples `n` points on the surface of a `d`-dimensional sphere. Do this by first sampling `n` points from `[-1, 1]^d` then normalizing them with respect to the `2`-norm (i.e. divide each point by its Euclidean magnitude).
 
@@ -114,10 +93,16 @@ Hints:
 
 
 
-## Task 3b
+:::
+
+:::{admonition} Task 3b
+:class: exercise
+
 
 Write a function, `equators(d, m, n, tol)`, that uses your generate function to sample `m` points from the surface of the `d`-dimensional unit sphere, then samples `n` additional points from the surface of the `d`-dimensional unit sphere, then computes the equatorial region of width `tol` for each of the `n` sampled points (where each of the `n` points is treated like a pole), and returns both the proportion of the `m` sampled points that fall within at least one equatorial band and the proportion of the `m` points the fall within all of the equatorial bands. Make sure that your function returns two objects of type `float` and not `np.float32` or `np.float64` (consider wrapping your results with `float()`).
 
+
+:::
 
 ## Fact 4
 
@@ -144,14 +129,26 @@ When the number of independent variables are high vectors drawn from a high dime
 Let's see this by coding.
 
 
-## Task 4a
+:::{admonition} Task 4a
+:class: exercise
+
 
 Write a function, `gaussian_angles(d, n, tol)`, that samples `n` vectors from the `d`-dimensional, standard normal distribution (using `np.random.normal(size=(n, d))`) then samples an additional vector from the `d`-dimensional, standard normal distribution, `x`, and returns an array of angles (in degrees) between each sample and `x`. Use `np.linalg.norm` when computing the angles.
 
-## Task 4b
+:::
+
+:::{admonition} Task 4b
+:class: exercise
+
 
 Using your code from the previous exercise, write a function, `gaussian_orthogonality(d, n, tol)`, that computes the proportion of the angles found by `gaussian_angles(d, n)` that fall within a given angle tolerance, `tol`, of being orthogonal. In other words, find the proportion of angles that satisfy `|theta - 90| < tol` where `theta` is a given angle.
 
-## Task 4c
+:::
+
+:::{admonition} Task 4c
+:class: exercise
+
 
 Use your code from the previous exercises to write a function, `plot_gaussian_angles(d, n)`, that creates a histogram for the angles generated by `gaussian_angles(d, n)`. Make sure to label your plot and its axes and selected a proper bin width. Use `density=True` for your histogram so your plot resembles a probability distribution.
+
+:::

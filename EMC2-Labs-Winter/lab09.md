@@ -30,7 +30,9 @@ SymPy has its own version for each of the standard mathematical functions like $
 ```
 Other trigonometric functions like $\cos(x)$ follow the same naming conventions. [Here is a complete list of SymPy functions](http://docs.sympy.org/latest/modules/functions/index.html).
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Write a function that returns the expression
 
@@ -39,6 +41,8 @@ Write a function that returns the expression
 ```
 symbolically. Make sure that the fractions remain symbolic.
 
+
+:::
 
 ## Evaluating Expressions
 
@@ -80,7 +84,9 @@ These operations are good for evaluating an expression at a single point, but it
 ```
 It is almost always computationally cheaper to lambdify a function than to use substitutions.
 
-## Task 2a
+:::{admonition} Task 2a
+:class: exercise
+
 
 The Maclaurin polynomial up to order N for $e^x$ is defined as
 
@@ -90,16 +96,22 @@ e^x \approx \sum_{n=0}^N \frac{x^n}{n!}.
 Write a function `maclaurin(N)` that accepts an integer `N`, and defines an expression for $e^x$, then substitute in $y^2$ for $x$ to get a Maclaurin polynomial of $e^{y^2}$.
 (Hint: use `sy.factorial()` to compute the factorial.)
 
-## Task 2b
+:::
+
+:::{admonition} Task 2b
+:class: exercise
+
 
 Lambdify the expression from Task 2a and display the plot of the polynomial on the domain $-2 \leq y \leq 2$. Plot $e^{y^2}$ over the same domain for comparison.
 
 
 Call your function with increasing values of `N` to check that the series converges correctly.
 
+:::
 ### Calculus
 
 SymPy is also equipped to perform standard calculus operations, including derivatives, integrals, and taking limits. Like other elements of SymPy, calculus operations can be temporally expensive, but they give exact solutions whenever solutions exist.
+
 
 ## Differentiation
 
@@ -131,7 +143,9 @@ Derivative(sin(y)*cos(x)**2, x)
 Let $f: \mathbb R \to \mathbb R$ be a smooth function. A *critical point* of $f$ is a number $x_0$ in $\mathbb R$ satisfying $f'(x_0) = 0$. The second derivative test states that a critical point $x_0$ is a local minimum of $f$ if $f''(x_0) > 0$, or a local maximum of $f$ if $f''(x_0) < 0$ (if $f''(x_0) = 0$, the test is inconclusive).
 
 
-## Task 3a
+:::{admonition} Task 3a
+:class: exercise
+
 
 Consider the polynomial
 
@@ -140,12 +154,20 @@ p(x) = 2x^6-51x^4 +48x^3 +312x^2-576x-100.
 ```
 Use SymPy to find all critical points of $p$ and classify each as a local minimum or a local maximum. Return the collections of local minima and local maxima as sets.
 
-## Task 3b
+:::
+
+:::{admonition} Task 3b
+:class: exercise
+
 
 Plot $p(x)$ over $-5 \leq x \leq 5$ and mark each of the minima in one color and the maxima in another color.
 
 
-## Task 4
+:::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Calculate the partial derivatives with respect to x and y of the following functions
 
@@ -154,6 +176,9 @@ Calculate the partial derivatives with respect to x and y of the following funct
 &\text{b)} \quad g(x,y) = xy^2-x^3 \qquad \text{(monkey saddle)} \\
 &\text{c)} \quad h(x,y) = \frac{2x^2+3xy+4y^2}{3x^2+5y^2}
 ```
+
+:::
+
 ## Bonus material
 
 (This will mean a lot more to you later in the semester.)

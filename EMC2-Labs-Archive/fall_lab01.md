@@ -298,7 +298,9 @@ In these labs, the code you'll turn in for credit will be labeled `Task`.
 Write the code for each Lab 1 task in your `Lab01` notebook.
 For future labs, create a new notebook each time.
 :::
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Enter the expression
 
@@ -311,6 +313,8 @@ Don't just save the numerical value of this expression,
 which is `20`. Save the actual expression with the addition, multiplication, division, subtraction, and parentheses as the variable.
 
 
+
+:::
 
 ## Functions, Part 1
 
@@ -400,7 +404,9 @@ the first line of the function.
 > >>> print(arithmetic(3))
 > >>> print(arithmetic(-10))
 > ```
-## Task 2
+::::{admonition} Task 2
+:class: exercise
+
 
 Define a function called `arithmetic2(i)` which does exactly the same thing
 as the function `arithmetic(i)` defined above, but which only has a `def` line and
@@ -418,6 +424,9 @@ This is a very important step in programming -- don't skip it!
 -29
 ```
 :::
+
+::::
+
 ## Functions, Part 2
 
 One item to note in the `arithmetic` example is how variables are treated by Python when they
@@ -494,7 +503,9 @@ Colab Cell
 │   └── return
 └── Cell Complete
 ```
-## Task 3
+:::{admonition} Task 3
+:class: exercise
+
 
 1. Define a function called `triple(y)` which takes a value `y` as input, and outputs `3y`.
 2. Define a function called `avg(x,y)` which takes two values `x` and `y` as input, and outputs the mean of `x` and `y`. Recall that the *mean* of two numbers $a$ and $b$ is defined to be $(a+b)/2$.
@@ -510,6 +521,8 @@ Colab Cell
 ```
 
 
+
+:::
 
 ## Lists
 
@@ -649,7 +662,9 @@ by using the command `list_a.copy()`, which we illustrate below.
 [100,2,3]
 ```
 :::
-## Task 4
+:::{admonition} Task 4
+:class: exercise
+
 
 1. Write a function `first(c)` which accepts as input any list `c`, and outputs the first element in the list `c`.
 2. Write a function `first_last(c)` which accepts as input a list `c`, and outputs two values, the first element and the last element of `c` (in that order).
@@ -666,7 +681,11 @@ by using the command `list_a.copy()`, which we illustrate below.
 ```
 
 
-## Task 5
+:::
+
+:::{admonition} Task 5
+:class: exercise
+
 
 Define a function `swap(c)` which accepts a list `c` with two or more elements,
 and returns another list which is the same as `c` except that the first and last elements are
@@ -686,6 +705,8 @@ The rest of your function should only reference `copied_list` so that the origin
 [0,1,2,3,4,5]
 ```
 
+
+:::
 
 ## Conditionals
 
@@ -758,7 +779,9 @@ the condition to be `True` or `False`.
 ```
 
 
-## Task 6
+:::{admonition} Task 6
+:class: exercise
+
 
 Write a function called `absolute_value(x)` which accepts as input a single
 number `x`, and returns the absolute value of `x`.
@@ -770,6 +793,8 @@ number `x`, and returns the absolute value of `x`.
 10
 ```
 
+
+:::
 
 ## Compound Conditions
 
@@ -792,7 +817,9 @@ False.
 (10<11) or (-3==-12)    # This will return True because at least one of the statements is True.
 (10==11) or (-3==-12)   # This will return False because both of the statements are False.
 ```
-## Task 7
+:::{admonition} Task 7
+:class: exercise
+
 
 
 Define a function, called `indicator(lower,upper,n)` which accepts as input
@@ -811,7 +838,11 @@ satisfies `lower <= n <= upper`, and returns `0` otherwise.
 
 
 
-## Task 8
+:::
+
+::::{admonition} Task 8
+:class: exercise
+
 
 
 Define a function, called `trunc_max(x,y)` which accepts as input two numbers
@@ -842,3 +873,5 @@ else:
       return the second number
 ```
 :::
+
+::::

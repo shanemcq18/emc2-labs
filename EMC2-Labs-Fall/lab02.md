@@ -80,7 +80,9 @@ def add(n):
 ```
 
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 1. Define a function called `triple(y)` which takes a value `y` as input, and outputs `3y`.
 2. Define a function called `avg(x,y)` which takes two values `x` and `y` as input, and outputs the mean of `x` and `y`.
@@ -95,6 +97,8 @@ def add(n):
 10.5
 ```
 
+
+:::
 
 ## Lists
 
@@ -230,7 +234,9 @@ by using the command `list_a.copy()`, which we illustrate below.
 [100,2,3]
 ```
 :::
-## Task 2
+:::{admonition} Task 2
+:class: exercise
+
 
 1. Write a function `first(c)` which accepts as input any list `c`, and outputs the first element in the list `c`.
 2. Write a function `first_last(c)` which accepts as input a list `c`, and outputs two values, the first element and the last element of `c` (in that order).
@@ -247,7 +253,11 @@ by using the command `list_a.copy()`, which we illustrate below.
 ```
 
 
-## Task 3
+:::
+
+:::{admonition} Task 3
+:class: exercise
+
 
 Define a function `swap(c)` which accepts a list `c` with two or more elements,
 and returns another list which is the same as `c` except that the first and last elements are
@@ -267,6 +277,8 @@ The rest of your function should only reference `copied_list` so that the origin
 [0,1,2,3,4,5]
 ```
 
+
+:::
 
 ## For Loops
 
@@ -362,7 +374,9 @@ range(2,5,2)    -->   [2, 4]
 range(-2,-5,-1) -->   [-2, -3, -4]
 ```
 :::
-## Task 4
+:::{admonition} Task 4
+:class: exercise
+
 
 Define a function `list_relu(L)` which takes as input a list `L` of numbers, and
 returns a list which is the same as `L` except that all negative values in `L` are replaced with `0`.
@@ -378,7 +392,11 @@ Notes:
 ```
 
 
-## Task 5
+:::
+
+:::{admonition} Task 5
+:class: exercise
+
 
 Write a function `scalar_mult(s,v)` that takes as input a scalar `s` and a vector `v` and returns the vector
 `sv`. The input and output vectors should be represented as Python list data types.
@@ -389,6 +407,8 @@ Write a function `scalar_mult(s,v)` that takes as input a scalar `s` and a vecto
 >>> scalar_mult( 3, [ 1., 0., 0.5 ] )
 [ 3., 0., 1.5 ]
 ```
+
+:::
 
 ## Exceptions
 
@@ -410,7 +430,9 @@ In the above example, we might instead raise a `ValueError` above when the vecto
 ```python
 raise ValueError('Error: Vectors have different lengths.')
 ```
-## Task 6
+:::{admonition} Task 6
+:class: exercise
+
 
 Write a function `vector_add(v,w)` that takes as input two vectors `v` and `w` and returns the vector `v+w`. The input and output vectors should be represented as  python list data types. Your function should check to ensure the vectors are the same size. If not, your function should raise a `ValueError` with an appropriate message.
 
@@ -423,7 +445,11 @@ Write a function `vector_add(v,w)` that takes as input two vectors `v` and `w` a
 Error: Vectors have different lengths.
 ```
 
-## Task 7
+:::
+
+:::{admonition} Task 7
+:class: exercise
+
 
 Write a function `dot_product(v,w)` that takes as input two vectors `v` and `w` and returns the dot product of `v` and `w`. The input and output vectors should be represented as  python list data types. Your function should check to ensure the vectors are the same size.  If not, your function should raise a `ValueError` with an appropriate message.
 
@@ -436,6 +462,8 @@ Write a function `dot_product(v,w)` that takes as input two vectors `v` and `w` 
 Error: Vectors have different lengths.
 ```
 
+
+:::
 
 ## List Comprehension
 
@@ -481,7 +509,9 @@ Here are a few more examples.
 ```
 
 
-## Task 8
+:::{admonition} Task 8
+:class: exercise
+
 
 Rewrite your `scalar_mult(s,v)` function with list comprehension. It should take as input a scalar `s` and a vector `v` and returns the vector `sv`. The input and output vectors should be represented as Python list data types.
 
@@ -493,7 +523,11 @@ Rewrite your `scalar_mult(s,v)` function with list comprehension. It should take
 ```
 
 
-## Task 9
+:::
+
+:::{admonition} Task 9
+:class: exercise
+
 
 
 Using list comprehension, create a list
@@ -504,7 +538,11 @@ Using list comprehension, create a list
 and save it as a variable called `long_list`.
 
 
-## Task 10
+:::
+
+:::{admonition} Task 10
+:class: exercise
+
 
 Using list comprehension, write a function called `cel_to_fah(c)` that takes in a list of temperatures in Celsius and returns a list of temperatures in Fahrenheit. The formula is $\frac{9}{5}c + 32 = f$.
 
@@ -512,3 +550,5 @@ Using list comprehension, write a function called `cel_to_fah(c)` that takes in 
 >>> cel_to_fah([0, 32, 100, 15])
 [32.0, 89.6, 212.0, 59.0]
 ```
+
+:::

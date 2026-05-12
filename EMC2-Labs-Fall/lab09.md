@@ -93,16 +93,24 @@ x^{k+1} =
 \end{array}
 \right]
 ```
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Write a function `jacobi_iteration(x, A, b)` which takes in an initial vector guess `x`, matrix `A` ($2 \times 2$ `numpy.array`\), and vector `b` ,
 and returns $x^{k+1}$ using Jacobi's method. Remember all inputs and outputs should be `np.array`s.
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 Write a function `jacobi_method(A, b, x, n)` which takes in a matrix `A` ($2 \times 2$ `numpy.array`\), vector `b` , and an initial vector guess `x` ,
 which performs the Jacobi method `n` times returning $x^{n+1}$. All inputs and outputs should be `np.array`s.
 
+
+:::
 
 ## Gauss-Seidel method
 
@@ -146,17 +154,25 @@ This constitutes the biggest change between the 2 methods.
 The benefit of Jacobi's method is that it can run in parallel. For now, all you need to know is that this means it can be quickly run on a GPU.
 Gauss-Seidel's method often has a faster convergence and needs less iterations than Jacobi, and in some cases it even converges when the Jacobi cannot.
 
-## Task 3
+:::{admonition} Task 3
+:class: exercise
+
 
 Write a function `gauss_seidel_iteration(x, A, b)` which takes in an initial vector guess `x`, matrix `A` ($2 \times 2$ `numpy.array`\), and vector `b` ,
 and returns $x^{k+1}$ using Gauss-Seidel's method. Remember that you must compute $x^{k+1}_1$ first, in order to use it
 in computing $x^{k+1}_2$. All inputs and outputs should be `np.array`s.
 
-## Task 4
+:::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Write a function `gauss_seidel_method(A, b, x, n)` which takes in a matrix `A` ($2 \times 2$ `numpy.array`\), vector `b` , and an initial vector guess `x` ,
 which performs Gauss-Seidel's method `n` times returning $x^{n+1}$. All inputs and outputs should be `np.array`s.
 
+
+:::
 
 ## Error and Convergence
 
@@ -175,11 +191,15 @@ np.array([3, 4])
 5
 ```
 
-## Task 5
+:::{admonition} Task 5
+:class: exercise
+
 
 Write a function called `gauss_seidel_error(A, b, x, sol, tol)`which takes in
 a matrix `A` ($2 \times 2$ `numpy.array`\), vector `b`, initial vector guess `x`, solution vector `sol`, and a desired error level `tol`.
 You will need to modify `gauss_seidel_method` to perform iterations until the distance between the iterate and `sol` is less than or equal to the tolerance, and then returns the approximate solution.
+
+:::
 
 ## Cases where convergence isn't reached
 

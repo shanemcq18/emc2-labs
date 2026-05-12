@@ -76,14 +76,22 @@ These dimensions represent the coordinates of a pixel in the image with `(0,0)` 
 The first dimension is the vertical dimension and the second is the horizontal dimension.
 Each entry is an integer representing how dark a pixel is (`0=black`, `255=white`).
 :::
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Write a function `svd_approx(A, s)` which takes in a 2-D matrix `A`, and rank `s`, and returns an SVD approximation of `A` up to rank `s`.
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 How small can you make `s` and still have the image recognizable? Don't worry about a little graininess.
 
+
+:::
 
 ## Application 2: Principal Component Analysis (PCA)
 
@@ -172,11 +180,19 @@ It is clear to see how so much more variance, and accuracy, is preserved in colu
 We call them principal components because the axes of these projections carry no physical units (they are not directly interpretable features).
 So while PCA can be really effective to visualize groupings and relations among the data in datasets, it is limited in producing actual conclusions about how individual features relate to the data.
 :::
-## Task 3
+:::{admonition} Task 3
+:class: exercise
+
 Write a function called `PCA(X, k)` which takes in a matrix `X`, and number of principal components `k` and returns an `m x k` `numpy.ndarray` using the PCA algorithm defined above.
 
 
-## Task 4
+:::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Use your newly defined `PCA(X, k)` function to perform PCA on the Palmer Penguins dataset, and then print out which two groups are the most similar according to the analysis.
 The dataset will be provided in CodeBuddy.
+
+:::

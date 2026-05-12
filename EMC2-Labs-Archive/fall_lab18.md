@@ -1,7 +1,9 @@
 # Lab 18: Modular Arithmetic
 
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 An *elliptic curve* is an equation of the form
 
@@ -32,7 +34,11 @@ Write a function `num_points(a,b,p)` that takes as input two integers `a` and `b
 
 
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 The textbook for Math 687R (a graduate number theory course at BYU) in Fall 2018 was *Auxiliary Polynomials in Number Theory* by David Masser.
 One of the exercises in that book states: do there exist integers `a,b,c,d,e,f` such that `a != 0` and
@@ -50,7 +56,11 @@ Find some `a,b,c,d,e,f`, all nonzero, such the equation above has no solutions m
 
 
 
-## Task 3
+:::
+
+:::{admonition} Task 3
+:class: exercise
+
 
 
 Write a program that finds every `n` in `[3,4,...,500]` that satisfies the congruence
@@ -65,7 +75,11 @@ What do you notice about these `n`?
 Is your observation true about *every* `n` in your list?
 
 
-## Task 4
+:::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Suppose that `p` is a prime number.
 In this task you will write a program that does the following.
@@ -87,3 +101,5 @@ for p in range(20,100):
 ```
 What do you notice about these values of `k`?
 Formulate a conjecture (guess).
+
+:::

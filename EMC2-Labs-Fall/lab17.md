@@ -35,7 +35,9 @@ M = \left[\begin{matrix}
 ```
 Notice that `M` is antisymmetric, meaning that `transpose(M) = -M`.
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Write a function `random_system(n)` that takes as input a positive integer `n` and returns a random system of one-way roads through `n` cities as an `n x n` matrix as described above.
 If you need help generating random integers, read about the function `randint` online. You will need to import `random`:
@@ -43,6 +45,8 @@ If you need help generating random integers, read about the function `randint` o
 ```python
 >>> from random import randint
 ```
+
+:::
 
 ## Valid Paths
 
@@ -82,7 +86,9 @@ Now we recursively find a valid path through the red cities and a valid path thr
 ```{image} _static/cities_path.svg
 :align: center
 ```
-## Task 2
+:::{admonition} Task 2
+:class: exercise
+
 
 Write a function `valid_path(M,L)` that takes as input an `n x n` matrix `M` and a list `L` of length `n`, and returns a valid path through the cities as a list of length `n`. The list `L` contains the names of the cities.
 For example, the function should return `[B, E, D, A, C]` as the path for the example above.
@@ -96,6 +102,8 @@ The `copy` package helps with this:
 ```
 
 As an extra (ungraded) challenge, write a function that computes all valid paths for the given input.
+
+:::
 
 ## A Problem with Recursion
 
@@ -126,7 +134,9 @@ Unsurprisingly, this prints "I'm calling the base case" every time the base case
 Now run `fib(10)` and watch the flood of output.
 In theory, computing the `10` -th Fibonacci number "by hand" should only call the base case once or twice.
 
-## Task 3
+:::{admonition} Task 3
+:class: exercise
+
 
 In order to speed up our Fibonacci function, we'll use a programming technique called "memoization".
 (The name is awkward, but the technique is great.)
@@ -143,7 +153,11 @@ def fib(n):
 The line starting with `@` needs to come immediately before your function definition. Replace `blah blah blah` by the code you already wrote for the `fib` function. Now see how fast your function computes `fib(40)`. And just for fun, see how fast it computes `fib(200)`. It should compute this in less than one second; don't submit your code to CodeBuddy until you have memoization working properly.
 
 
-## Task 4: Towers of Hanoi
+:::
+
+:::{admonition} Task 4: Towers of Hanoi
+:class: exercise
+
 
 
 There is a legend about an Indian temple in Kashi Vishwanath which contains a large room with three time-worn posts in it.
@@ -151,9 +165,10 @@ At the beginning of time, the leftmost post was surrounded by 64 golden disks.
 Brahmin priests, acting out the command of an ancient prophecy, have been moving these disks in accordance with the immutable rules of Brahma since that time, in an effort to move the disks to the rightmost post.
 The rules are:
 
-> 1. Only one disk can be moved at a time.
-> 2. Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack or on an empty post.
-> 3. No larger disk may be placed on top of a smaller disk.
+1. Only one disk can be moved at a time.
+2. Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack or on an empty post.
+3. No larger disk may be placed on top of a smaller disk.
+
 When the last move of the puzzle is completed, the world will end.
 Your task is to determine how soon the world will end, given that the priests can move one disk per second.
 
@@ -199,3 +214,5 @@ At each move, print "move from post _ to post _", like this:
 For how many years will the priests be moving disks? Remember that there are 64 disks and the priests can move one disk per second.
 
 *Hint:* don't run `hanoi(64,...)` -- instead try to find the pattern. Can you prove by induction that your pattern is correct?
+
+:::

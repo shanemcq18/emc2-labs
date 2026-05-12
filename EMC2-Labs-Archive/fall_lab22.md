@@ -26,7 +26,9 @@ You can use the LU factorization method as follows.
 The output is a triple `(P,L,U)` where `P` is a permutation matrix, `L` is a lower-triangular matrix, and `U` is an upper triangular matrix.
 
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 
 
@@ -45,7 +47,11 @@ Your base case should be when `M` is a `1 x 1` matrix, in which case the determi
 
 
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 
 Write a function `det_LU(M)` which takes as input a matrix `M` and compute the determinant of a matrix by first computing the LU factorization of `M` as described above, and then returning the product of values on the main diagonal of `U`.
@@ -65,7 +71,11 @@ This will mean that your determinant is sometimes off by a sign since swapping r
 
 
 
-## Challenge
+:::
+
+:::{admonition} Challenge
+:class: exercise
+
 
 
 Fix your `det_LU(M)` function so that it accounts for the change of sign indicated by the permutation matrix.
@@ -79,3 +89,5 @@ Fix your `det_LU(M)` function so that it accounts for the change of sign indicat
 [1,1,1,1,1]])
 -4.0
 ```
+
+:::

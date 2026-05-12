@@ -31,7 +31,9 @@ successor of the successor of the successor of the successor of the successor of
 
 It may seem like this is enough to define the natural numbers, but through this lab (and the subsequent Lean Lab), we will see that we need a few more axioms.
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Complete every level from each of the following worlds:
 
@@ -40,3 +42,5 @@ Complete every level from each of the following worlds:
 #. Multiplication World
 
 In the next 290 lab, ({doc}`lab24`), you will complete worlds 4-6.
+
+:::

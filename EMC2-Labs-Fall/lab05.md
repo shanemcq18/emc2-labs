@@ -145,7 +145,9 @@ def abs_matrix(M):
 ```
 This way, we create a new matrix `new_M` and copy each row of `M` into it, so that we don't change the original matrix.
 :::
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Define a function, called `matrix_sum(M)`, which takes as input a matrix `M`, and adds up all of the entries.
 
@@ -155,7 +157,11 @@ Define a function, called `matrix_sum(M)`, which takes as input a matrix `M`, an
 -5
 ```
 
-## Task 2
+:::
+
+:::{admonition} Task 2
+:class: exercise
+
 
 Using nested `for` loops, write a function `matrix_sum(A, B)` that takes in two Python lists of lists and returns the matrix sum. Raise a `ValueError` if the matrices are different shapes
 
@@ -170,6 +176,8 @@ Using nested `for` loops, write a function `matrix_sum(A, B)` that takes in two 
 ValueError: Matrices A and B are different shapes.
 ```
 
+
+:::
 
 ## Double and Nested List Comprehensions
 
@@ -233,7 +241,9 @@ Notice how the ones place represents the column index, and the tens place repres
 
 The main difference between double list comprehension and nested list comprehension is that double list comprehension returns a list, while nested list comprehension returns a list of lists.
 
-## Task 3
+:::{admonition} Task 3
+:class: exercise
+
 
 Using a double list comprehension, write a function `cartesian_product(A, B)` that takes in two Python lists `A`, and `B` and returns a list of the cartesian product of $A$ and $B$.
 
@@ -243,7 +253,11 @@ Using a double list comprehension, write a function `cartesian_product(A, B)` th
 ```
 
 
-## Task 4
+:::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Rewrite `matrix_sum(A, B)` using a nested list comprehension. `matrix_sum` should take in two Python lists of lists and returns the matrix sum. Don't worry about raising a value error if the matrices are different sizes.
 
@@ -257,36 +271,24 @@ Rewrite `matrix_sum(A, B)` using a nested list comprehension. `matrix_sum` shoul
 ```
 
 
+:::
+
 ## Intro to Numpy
 
 Although there are a number of useful functions which are already defined in Python, like
 `range` and `len`, there are many common mathematical functions like `sin(x)` and `log(x)` which
 are not defined. **Packages** and **libraries** contain functions that we can include in our code so we don't have to define them ourselves. Here is a table of common packages and what they do.
 
-```{list-table}
-:widths: 25 75
-:header-rows: 1
-
-* - Package
-  - Description
-* - `os`
-  - Interacts with the operating system (files and paths).
-* - `math`
-  - Basic math operations like square root, trig functions, constants like π.
-* - `random`
-  - Generate random numbers, choices, shuffles, etc.
-* - `numpy`
-  - Numerical Python; foundation of scientific computing and numerical linear algebra.
-* - `pandas`
-  - Powerful data tables (like spreadsheets) and data cleaning.
-* - `matplotlib`
-  - Plotting
-* - `scikit-learn`
-  - Classic machine learning including regression, classification, clustering.
-* - `beautifulsoup4`
-  - Scrape and parse information from websites.
-
-```
+| Package | Description |
+| --- | --- |
+| `os` | Interacts with the operating system (files and paths). |
+| `math` | Basic math operations like square root, trig functions, constants like π. |
+| `random` | Generate random numbers, choices, shuffles, etc. |
+| `numpy` | Numerical Python; foundation of scientific computing and numerical linear algebra. |
+| `pandas` | Powerful data tables (like spreadsheets) and data cleaning. |
+| `matplotlib` | Plotting |
+| `scikit-learn` | Classic machine learning including regression, classification, clustering. |
+| `beautifulsoup4` | Scrape and parse information from websites. |
 NumPy is a particularly helpful package that contains many functions which are important for
 doing linear algebra and mathematics in general.
 
@@ -334,7 +336,9 @@ the function name.
 Note that the trigonometric functions in NumPy are computed in terms of radians, and that
 `np.log` is the natural logarithm, with base `e`.
 
-## Task 5
+:::{admonition} Task 5
+:class: exercise
+
 
 Find the value of
 
@@ -344,6 +348,8 @@ Find the value of
 using NumPy functions, and save its value as the variable `my_var`.
 Here log denotes the natural logarithm.
 
+
+:::
 
 ## Vectors and Matrices
 
@@ -408,7 +414,9 @@ array([3, 6, -3])
 ```
 
 
-## Task 6
+:::{admonition} Task 6
+:class: exercise
+
 
 Let
 
@@ -452,6 +460,8 @@ Compute the value of
 3\vec{u} - 6\vec{v}+\vec{w}
 ```
 and save it as a variable called `my_vect_var`.
+
+:::
 
 ## Conclusion
 

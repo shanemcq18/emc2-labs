@@ -9,3 +9,51 @@ div.md-typeset__scrollwrap {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* Increase font size for all admonitions */
+div.admonition {
+    font-size: 1em;
+}
+
+div.admonition>.admonition-title {
+    font-size: 1em;
+}
+
+/* Increase font size for paragraphs within admonitions */
+div.admonition>p {
+    font-size: 1em;
+}
+
+/* === Exercise admonition === */
+.admonition.exercise {
+    border-left: 0.35rem solid #002E5D;
+    border-right: 0.35rem solid #002E5D;
+    border-bottom: 0.35rem solid #002E5D;
+}
+
+.admonition.exercise>.admonition-title {
+    background-color: #002E5D;
+    color: white;
+    font-weight: 650;
+    font-size: 1em;
+}
+
+.admonition.exercise>.admonition-title::before {
+    background-color: white;
+}
+
+/* === Test cases admonition === */
+.admonition.testcase {
+    border-left: 0.1rem solid #D1CCBD;
+    border-right: 0.1rem solid #D1CCBD;
+    border-bottom: 0.1rem solid #D1CCBD;
+}
+
+.admonition.testcase>.admonition-title {
+    background-color: #D1CCBD;
+    color: black;
+}
+
+.admonition.testcase>.admonition-title::before {
+    background-color: black;
+}

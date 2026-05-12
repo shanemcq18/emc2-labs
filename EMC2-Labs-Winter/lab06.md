@@ -92,7 +92,9 @@ def bad_factorial_funct(n):
     return prod
 ```
 :::
-## Task 1
+::::{admonition} Task 1
+:class: exercise
+
 
 For each function, talk to a friend and find the time complexity in $\text{Big-}O$ notation. Make sure you can explain why.
 
@@ -144,6 +146,9 @@ def has_pair_with_sum(arr, target):
 :::{admonition} Key Takeaway
 $\text{Big-}O$ notation helps us understand how much time a function will take to run.
 :::
+
+::::
+
 ## Bubble Sort
 
 To learn about Bubble Sort, consider this example.
@@ -165,14 +170,20 @@ Starting on the left, each pair compares numbers. If they are out of order, they
 Note that we had to go through the line of people more than once. (In other words, we had to restart at the beginning after we had looked at every element because `1` and `2` were still out of order.) Most of the time, we cannot sort a list in one pass. What is the largest number of passes needed?
 
 
-## Task 2
+:::{admonition} Task 2
+:class: exercise
+
 
 In CodeBuddy, bubble sort the list `[3,2,1,0]`  so that it is in increasing order, writing each step on its own line.
 How many times did you have to run through the entire list?
 What do you suspect is the maximum number of times that you will have to run through an arbitrary list to sort it?
 
 
-## Task 3
+:::
+
+::::{admonition} Task 3
+:class: exercise
+
 
 Write a function `bubble_sort` that takes as a parameter an unsorted list `l` and returns the list sorted from smallest to largest. Here are some hints and words of caution:
 
@@ -182,9 +193,10 @@ Write a function `bubble_sort` that takes as a parameter an unsorted list `l` an
 
 - Consider how you could optimize this algorithm:
 
-> - The `k` largest elements are guaranteed to be at the end of our list, in ascending order, after the `k` th iteration of our first `for` loop.
->
-> - If no terms were swapped during an iteration of our outer `for` loop, then the list must already be in ascending order.
+  - The `k` largest elements are guaranteed to be at the end of our list, in ascending order, after the `k` th iteration of our first `for` loop.
+
+  - If no terms were swapped during an iteration of our outer `for` loop, then the list must already be in ascending order.
+
 ```python
 >>> bubble_sort([2,1,3,0])
 [0, 1, 2, 3]
@@ -197,7 +209,12 @@ Write a function `bubble_sort` that takes as a parameter an unsorted list `l` an
 :::{admonition} Question: Bubble Sort Complexity
 Turn to a neighbor and discuss what the algorithmic complexity of Bubble Sort is. Why?
 :::
-## Task 4
+
+::::
+
+::::{admonition} Task 4
+:class: exercise
+
 
 Let's look at the algorithmic complexity of programs that we have made.
 
@@ -217,3 +234,5 @@ Let `f` and `g` be real functions defined on some unbounded domain, say the real
 ```
 :::
 In other words, a $\text{Big-}O$ gives an approximate upper bound on the growth of a function as `x -> ∞`.
+
+::::

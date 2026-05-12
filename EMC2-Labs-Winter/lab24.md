@@ -60,18 +60,30 @@ We can calculate using this grid in exactly the same way that we could with the 
 If we have some $f: \mathbb C \to \mathbb C$, we may compute an output grid by writing `Z = f(X_0)`.
 
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Write a function, `comspace(a, b, c, d, n, m, axes)`, that uses `np.linspace` and `np.meshgrid` to create an array of complex numbers distributed uniformly on `{x + 1j * y: a <= x <= b, c <= y <= d}` with `n` terms on the real axis and `m` terms on the imaginary axis. Also, accept a boolean value `axes` that returns the axis grids (the outputs of `np.meshgrid`) when `True`.
 
-## Task 2a
+:::
+
+:::{admonition} Task 2a
+:class: exercise
+
 
 Write a function, `newton(f, df, x0, tol, maxiter)`, that implements Newton's method and returns the solution only. If you have completed {doc}`lab11`, you are welcome to reuse that implementation of Newton's Method.
 
-## Task 2b
+:::
+
+:::{admonition} Task 2b
+:class: exercise
+
 
 Vectorize your implementation of `newton(f, df, x0, tol, maxiter)` by adding `@np.vectorize(excluded={0, 1, 3, 4, "f", "df", "tol", "maxiter"})` to the line directly above the function declaration. This allows your function to properly handle vector inputs.
 
+
+:::
 
 ## Basins of Attraction
 
@@ -101,28 +113,48 @@ Notice that in some portions of the first figure, whenever red and blue try to c
 
 Newton fractals show that the long-term behavior of Newton's method is *extremely* sensitive to the initial guess $x_0$. Changing $x_0$ by a small amount can change the output of Newton's method in a seemingly random way. This phenomenon is called *chaos* in mathematics.
 :::
-## Task 3
+:::{admonition} Task 3
+:class: exercise
+
 
 Write a function, `basins(f, df, X, zeros)`, that finds the basins of attraction for `X` by running Newton's method on `X` for `f, df` and finding the indices of the zeros that are closest to the output.
 
 Hint: Consider using `np.abs` and `np.argmin` (with `axis=0`) and `np.expand_dims` to ensure array broadcasting functions properly.
 
 
-## Task 4a
+:::
+
+:::{admonition} Task 4a
+:class: exercise
+
 
 Using all the functions you have made so far, write a function, `plot_basins(f, df, zeros, bounds, res)`, that plots the basins of attraction, using `plt.pcolormesh` (with `cmap="brg"`), of `f` applied to the complex region defined by `bounds` and `res` where `bounds` is a tuple containing `(a, b, c, d)` and `res` is the number of points to generate for each axis.
 
 
-## Task 4b
+:::
+
+:::{admonition} Task 4b
+:class: exercise
+
 
 Use your code from the previous exercise to visualize the basins of attraction for `f = lambda x: x ** 3 - 1` on `{x + yi: -1.5 <= x, y <= 1.5}` with `res=500`.
 
-## Task 4c
+:::
+
+:::{admonition} Task 4c
+:class: exercise
+
 
 Use your code from the previous exercise to visualize the basins of attraction for `f = lambda x: x ** 3 - x` on `{x + yi: -1.5 <= x, y <= 1.5}` with `res=500`.
 
-## Task 4d
+:::
+
+:::{admonition} Task 4d
+:class: exercise
+
 
 Use your code to plot the Newton fractal (basins of attraction) for a function of your choice.
 
 If you wish to use functions that are not polynomials, make sure to use NumPy's version of the function instead of the `math` library's. For example, use `np.sin` instead of `math.sin` since the first will work for complex numbers and the second will not. You are welcome to use online calculators to compute the zeros of complex functions. Change the domain variables `[r_min, r_max, i_min, i_max]` so that all the zeros of the function `f` are within the domain of the plot.
+
+:::

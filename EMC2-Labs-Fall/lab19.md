@@ -10,73 +10,17 @@ CZVEILTUPRIMCGKBTVSVXVJRTCIBTSQQJHBVHVPKQRJSEUMHMGFBPXWXDOAMECWQTUCZXGIBBVLXGIHB
 The main fact we will use to break the cipher is that in most English texts the frequencies of letters are not equal (see the table below).
 For example, the letters `RSTLNE`, which you may recognize from watching Wheel of Fortune, are among the most frequent.
 
-```{list-table} Frequencies of letters in English
-:header-rows: 1
+| a | b | c | d | e | f | g | h | i |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| .082 | .015 | .028 | .043 | .127 | .022 | .020 | .061 | .070 |
 
-* - a
-  - b
-  - c
-  - d
-  - e
-  - f
-  - g
-  - h
-  - i
-* - .082
-  - .015
-  - .028
-  - .043
-  - .127
-  - .022
-  - .020
-  - .061
-  - .070
+| j | k | l | m | n | o | p | q | r |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| .002 | .008 | .040 | .024 | .067 | .075 | .019 | .001 | .060 |
 
-```
-```{list-table}
-:header-rows: 1
-
-* - j
-  - k
-  - l
-  - m
-  - n
-  - o
-  - p
-  - q
-  - r
-* - .002
-  - .008
-  - .040
-  - .024
-  - .067
-  - .075
-  - .019
-  - .001
-  - .060
-
-```
-```{list-table}
-:header-rows: 1
-
-* - s
-  - t
-  - u
-  - v
-  - w
-  - x
-  - y
-  - z
-* - .063
-  - .091
-  - .028
-  - .010
-  - .023
-  - .001
-  - .020
-  - .001
-
-```
+| s | t | u | v | w | x | y | z |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| .063 | .091 | .028 | .010 | .023 | .001 | .020 | .001 |
 The following is an outline for how to decrypt a ciphertext encoded with the Vigenère Cipher with an unknown key. (Read until the end of the lab before you start working on any individual part.)
 
 
@@ -89,19 +33,21 @@ S[0] = 'ADGJ' # 0, 3, 6, 9
 S[1] = 'BEHK' # 1, 4, 7, 10
 S[2] = 'CFI' # 2, 5, 8
 ```
-> For each `j`, every letter of `S[j]` has been encrypted with the same letter of the key.
+For each `j`, every letter of `S[j]` has been encrypted with the same letter of the key.
+
 3. For each `j` from `0` to `K-1`:
 
-> a. For each `m` from `0` to `25`, decrypt the `j`-th string using the `m`-th letter of the alphabet.
->
-> b. Measure the frequency of each letter in each of the strings in (a), and record these frequencies in a table (list of 26 lists) called `freq_list`.
->
-> c. Find the value of `m` for which the dot product `freq_list[m]·F` is maximized, where `F` is the vector of letter frequencies
->
-> > `F=[.082, .015, .028, .043, .127, .022, .020, .061, .070, .002, .008, .040, .024, .067, .075, .019, .001, .060, .063, .091, .028, .010, .023, .001, .020, .001]`
-> >
-> > from the table at the top of the lab.
-> > Then the `j`-th letter of the key is the `m`-th letter of the alphabet.
+   a. For each `m` from `0` to `25`, decrypt the `j`-th string using the `m`-th letter of the alphabet.
+
+   b. Measure the frequency of each letter in each of the strings in (a), and record these frequencies in a table (list of 26 lists) called `freq_list`.
+
+   c. Find the value of `m` for which the dot product `freq_list[m]·F` is maximized, where `F` is the vector of letter frequencies
+
+      `F=[.082, .015, .028, .043, .127, .022, .020, .061, .070, .002, .008, .040, .024, .067, .075, .019, .001, .060, .063, .091, .028, .010, .023, .001, .020, .001]`
+
+      from the table at the top of the lab.
+      Then the `j`-th letter of the key is the `m`-th letter of the alphabet.
+
 4. Decrypt the ciphertext using the key you found.
 
 :::{admonition} Understanding the logic
@@ -118,7 +64,9 @@ The shift that gives the largest dot product is considered the best match—beca
 Repeating this process for every group (i.e., for every position in the key) gives us the full key.
 With that, we can finally decrypt the entire ciphertext.
 :::
-## Task 1: Split the ciphertext
+:::{admonition} Task 1: Split the ciphertext
+:class: exercise
+
 
 
 Write a function `str_split(s,j,k)` that takes in a string `s` and two integers `j,k`, where `k >= 1`, and returns a string consisting of each letter of `s` whose index is congruent to `j` modulo `k`.
@@ -131,7 +79,11 @@ Write a function `str_split(s,j,k)` that takes in a string `s` and two integers 
 
 
 
-## Task 2: Measure letter frequencies
+:::
+
+:::{admonition} Task 2: Measure letter frequencies
+:class: exercise
+
 
 
 Write a function `letter_freq(s)` that takes as input a string `s` and outputs a vector of length 26 whose `i`-th element is the frequency of the `i`-th letter of the alphabet in the string `s`.
@@ -148,7 +100,11 @@ The built-in string function `count` may be helpful here.
 
 
 
-## Task 3: Maximize the dot product
+:::
+
+:::{admonition} Task 3: Maximize the dot product
+:class: exercise
+
 
 
 Write a function `maximize_dot(string)` that takes as input a string `string` and outputs the integer `m` for which the dot product `letter_freq(string-decrypted-by-mth-letter)·F` is maximized.
@@ -176,7 +132,11 @@ def maximize_dot(string):
 
 
 
-## Task 4: Decrypt the ciphertext
+:::
+
+:::{admonition} Task 4: Decrypt the ciphertext
+:class: exercise
+
 
 
 Write a function `vigenere_crack(message)` that takes in a string `message` and outputs a list of two strings: the most likely key and the most likely plaintext.
@@ -186,3 +146,5 @@ As a test input, use the ciphertext at the top of this page. It will be very cle
 (Follow the outline at the top of the lab to get the pseudocode for this function.)
 
 You can get other test input strings at <https://mathdept.byu.edu/~doud/Vigenere/>
+
+:::

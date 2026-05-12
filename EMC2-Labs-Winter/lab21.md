@@ -71,7 +71,9 @@ The `label` column is the digit that the image represents.
 >>> y = data['label']
 >>> X = data['data']
 ```
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Create a figure with 3 subplots, and plot the images of the dataset at indexes 13, 3145, and 4321.
 
@@ -81,6 +83,8 @@ Create a figure with 3 subplots, and plot the images of the dataset at indexes 1
 * Use `ax[i].axis('off')` to remove the axes for each subplot
 * Set the overall title of the figure to `"MNIST Digits"` using `plt.suptitle()`
 * Use `plt.tight_layout()` to adjust the spacing between the subplots
+
+:::
 
 ## Image Flattening and Reshaping
 
@@ -106,13 +110,17 @@ The `numpy.reshape()` function allows us to change the shape of an array without
 [[1 2 3 4]
  [5 6 7 8]]
 ```
-## Task 2
+:::{admonition} Task 2
+:class: exercise
+
 
 Create a function `flatten_data(X)` which takes in a Pandas Series and returns a `numpy.ndarray` of the flattened data.
 `X` will be `data['data']` from the `DataFrame` that you loaded in Task 1.
 Call `X.values` to get the `numpy.ndarray` from the `Series` that you can iterate over.
 The returned array should have shape [n, 784] where n is the number of images and 784 = 28x28 pixels.
 
+
+:::
 
 ## Train vs Test
 
@@ -166,7 +174,9 @@ The accuracy of the model is 0.80
 We use lowercase `y` for labels because it's a common convention in machine learning - `X` represents features (capitalized because it's typically a matrix),
 while `y` represents the target variable (lowercase because it's typically represented in a vector form).
 :::
-## Task 3
+:::{admonition} Task 3
+:class: exercise
+
 
 For this task, you will be training a KNN classifier on the MNIST dataset.
 
@@ -177,6 +187,8 @@ For this task, you will be training a KNN classifier on the MNIST dataset.
 
 (Remember that you need to get the features `X` and labels `y` from the original dataframe.)
 
+
+:::
 
 ## Ablation Study
 
@@ -189,26 +201,32 @@ Below are some of the common effects of the number of neighbors (k) on the perfo
 
 1. **k = 1 (Single Neighbor)**
 
-> - Makes decisions based on only the closest training example
-> - Very sensitive to noise and outliers
-> - Can lead to overfitting (memorizing the training data to the point where it performs poorly on new data)
-> - Creates complex, irregular decision boundaries
+   - Makes decisions based on only the closest training example
+   - Very sensitive to noise and outliers
+   - Can lead to overfitting (memorizing the training data to the point where it performs poorly on new data)
+   - Creates complex, irregular decision boundaries
+
 2. **k = 3-5 (Small k)**
 
-> - Balances local patterns with some noise reduction
-> - Often provides good performance for many datasets
-> - Decision boundaries are still relatively complex
+   - Balances local patterns with some noise reduction
+   - Often provides good performance for many datasets
+   - Decision boundaries are still relatively complex
+
 3. **k = 7-15 (Medium k)**
 
-> - More robust to noise
-> - Smoother decision boundaries
-> - May lose some fine-grained local patterns
+   - More robust to noise
+   - Smoother decision boundaries
+   - May lose some fine-grained local patterns
+
 4. **k > 15 (Large k)**
 
-> - Very smooth decision boundaries
-> - Less sensitive to noise but may miss important local patterns
-> - Can lead to underfitting (oversimplifying the problem)
-## Task 4
+   - Very smooth decision boundaries
+   - Less sensitive to noise but may miss important local patterns
+   - Can lead to underfitting (oversimplifying the problem)
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Create a function `ablate_k(X, y, k_values, test_size, random_state)` that will perform an ablation study on the KNN classifier.
 It should:
@@ -219,7 +237,11 @@ It should:
 * Return a list of the k values and the accuracies of the form `[(k1, accuracy1), (k2, accuracy2), ...]`
 
 
-## Task 5
+:::
+
+:::{admonition} Task 5
+:class: exercise
+
 
 Using your function from Task 4, plot the effect of the parameter k as a function of the accuracies (plot the k values 1-10 on the x-axis and the accuracies on the y-axis).
 
@@ -230,3 +252,5 @@ Using your function from Task 4, plot the effect of the parameter k as a functio
 * Use `plt.grid(True)` to add a grid to the plot
 * Use `plt.tight_layout()` to adjust the spacing between the subplots
 * Use `plt.show()` to display the plot
+
+:::

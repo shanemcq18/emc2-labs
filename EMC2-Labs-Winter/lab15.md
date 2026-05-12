@@ -35,13 +35,17 @@ On average, increasing the number of sample points decreases the estimate error.
 :width: 90 %
 :align: center
 ```
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 The $n$-dimensional open unit ball is the set $U_n = \{ x \in \mathbb{R}^n : \sum_{i=1}^n x_i^2 < 1 \}$. Write a function `unit_ball_vol(n,N)` that accepts an integer $n$ and a keyword argument $N$ defaulting to $10^4$.
 Using Monte Carlo Methods, estimate the volume of $U_n$ by drawing $N$ points uniformly from the surrounding domain $[-1, 1] \times [-1, 1] \times ... \times [-1, 1]$, counting how many fall into $U_n$. Use `np.random.uniform` for your sampling and use `np.linalg.norm` to determine if the points are within the unit ball.
 Hint: the volume of the hypercube $[-1,1]^n$ is $2^n$.
 
 When $n = 2$, this is the same experiment outlined above so your function should return an approximation of $\pi$. The volume of $U_3$ is $\frac 43\pi \approx 4.18879$, and the volume of $U_4$ is $\frac{1}{2}\pi^2 \approx 4.9348$. Try increasing the number of sample points $N$ to see if your estimates improve.
+
+:::
 
 ## Integral Estimation
 
@@ -81,7 +85,9 @@ which is the Monte Carlo formula in one dimension.
 In this setting $\Omega = [a,b]$ and hence $V(\Omega) = b-a$.
 
 
-## Task 2
+::::{admonition} Task 2
+:class: exercise
+
 
 Write a function `monte_carlo_one_dim` that accepts a function $f: \mathbb R\to \mathbb R$, bounds of integration $a$ and $b$, and an integer $N$ defaulting to $10^4$. Use `np.random.uniform()` to sample $N$ points over the interval $[a,b]$, then use the Monte Carlo formula to estimate
 
@@ -110,6 +116,8 @@ does not converge. Even so, attempts at Monte Carlo integration still return a f
 
 
 
+::::
+
 ## Integration in Higher Dimensions
 
 The implementation of the Monte Carlo formula for a function $f: \mathbb R^n \to \mathbb R$ with $n>1$ introduces a few tricky details, but the overall procedure is the same as in the case $n=1$. We consider only the case where $\Omega \subset \mathbb R^n$ is an $n$-dimensional box $[a_1,b_1] \times [a_2,b_2] \times \cdots \times [a_n,b_n]$.
@@ -131,7 +139,9 @@ V(\Omega) = \prod_{i=1}^n (b_i-a_i)
 > ```{math}
 > [0,1]\times\cdots\times[0,1] \xrightarrow{\text{scale}} [0,b_1-a_1]\times\cdots\times[0,b_n-a_n] \xrightarrow{\text{shift}} [a_1,b_1]\times\cdots\times[a_n,b_n]
 > ```
-## Task 3
+:::{admonition} Task 3
+:class: exercise
+
 
 Write a function `monte_carlo` that accepts a function $f: \mathbb R^n\to \mathbb R$, a list of lower bounds $[a_1,\ldots,a_n]$, a list of upper bounds $[b_1,\ldots,b_n]$, and an integer $N$ defaulting to $10^4$, and estimates the integral
 
@@ -148,3 +158,5 @@ Test your function on the following integrals.
 \int_{-4}^4 \int_{-3}^3 \int_{-2}^2 \int_{-1}^1 x+&y-wz^2 \, dxdydzdw = 0
 ```
 Note carefully how the order of integration defines the domain; in the last example, the $xyzw$ domain is $[-1,1] \times [-2,2] \times [-3,3] \times [-4,4]$, so the lower and upper bounds passed to your function should be $[-1,-2,-3,-4]$ and $[1,2,3,4]$, respectively.
+
+:::

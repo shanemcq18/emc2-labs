@@ -50,7 +50,9 @@ A = \begin{pmatrix}
    0 & m_2 & s_3 \\
 \end{pmatrix}.
 ```
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Write a function `pop_transition_matrix(s2, s3, m1, m2, f3)` that accepts stasis, maturation, and fertility values and constructs the corresponding transition matrix using a NumPy array.
 Make sure the corresponding transition matrix reflects a valid population dynamics model. Namely,
@@ -59,6 +61,8 @@ Make sure the corresponding transition matrix reflects a valid population dynami
 * The stasis and maturation parameters for a given state (i.e., column of $A$) must sum to a value less than or equal to $1$.
 
 If the matrix is not a valid population dynamics model, raise a `ValueError`.
+
+:::
 
 ## Eigenvalues and Eigenvectors
 
@@ -71,18 +75,24 @@ Since $A$ has non-negative real entries, then by the Perron-Frobenius Theorem
 1. There exists a unique dominant, **positive** eigenvalue $\lambda_1 > 0$, with $\lambda_1 > |\lambda_i|$ for all $i = 2, \ldots, n$.
 2. The eigenvector $v_1$ associated with $\lambda_1$ can be scaled to have all positive entries.
 
-## Task 2
+:::{admonition} Task 2
+:class: exercise
+
 
 Write a function `compute_principal_eig(A)` that accepts a transition matrix as a NumPy array and returns the principal eigenvalue and its corresponding eigenvector as a list. [See the NumPy function](https://numpy.org/doc/stable/reference/generated/numpy.linalg.eig.html) `numpy.linalg.eig`.
 
 
 The NumPy function `eig` will sometimes return numbers of the form `a+b*j`, where `j` is the square root of `-1`. As this may return complex values of the form `a+0*j`, use `np.real` to convert these values into (real) floats. You may need to use the command `float()` to convert the results of this function from `np.float64` to the usual `float` data type.
 
+:::
+
 ## Simulating Populations
 
 A transition matrix can be combined with a **population value vector** to simulate a transition cycle. A population value vector is a vector containing the number of organisms in each state at the beginning of a cycle.
 
-## Task 3
+::::{admonition} Task 3
+:class: exercise
+
 
 Write a function `simulate(A, p, t)` that simulates `t` steps of the population dynamics model represented by the NumPy array `A`, with initial population value vector `p` given as a list.
 Return a list containing the `t+1` population vectors.
@@ -90,6 +100,9 @@ Return a list containing the `t+1` population vectors.
 :::{note}
 For Task 3, if `p` has negative entries, raise a `ValueError`.
 :::
+
+::::
+
 ## Black Bear Population Demo
 
 Open the [Black Bear Population Demo](https://jhtullis.github.io/test_eigenbears/). This web app computes each of the things that you have written in this lab. On the left hand side of the page you can vary the stasis, maturation, and fertility parameters.
@@ -97,13 +110,19 @@ Open the [Black Bear Population Demo](https://jhtullis.github.io/test_eigenbears
 * The principal eigenvector is displayed as a pie chart reflecting the proportion of the population that each class (or state) makes up.
 * The principal eigenvalue is displayed as the title of the plot of the population count.
 
-## Task 4
+:::{admonition} Task 4
+:class: exercise
+
 
 Play around with setting different model parameters $s_2, s_3, m_1, m_2, f_3$. **What happens to the population count when** $\lambda_1 < 1$ **? How about when** $\lambda_1 > 1$ **?**
 
 Set the parameters to the following: $s_2 = 0.5, s_3 = 0.93, m_1 = 0.65, m_2 = 0.25, f_3 = 0.2$. Now, for each parameter, see how the principal eigenvalue $\lambda_1$ changes as a result of changing the parameter by $\pm 0.05$. **Which parameter has the greatest effect on the value of** $\lambda_1$ **?**
 
-## Task 5
+:::
+
+::::{admonition} Task 5
+:class: exercise
+
 Given the following matrix (taken from the diagram shown above), use `simulate` with $t = 50$ iterations for a few different initial vectors `p` (e.g., `p = np.array([500, 400, 1000])`), then normalize the final population vector. **How does this compare to the principal eigenvector of the transition matrix?**
 
 ```{math}
@@ -118,3 +137,5 @@ This process is an example of the [Power Method](https://en.wikipedia.org/wiki/P
 
 You can learn more about this with [Markov Chains](https://en.wikipedia.org/wiki/Markov_chain).
 :::
+
+::::

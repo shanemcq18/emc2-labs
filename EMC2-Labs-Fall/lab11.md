@@ -104,7 +104,9 @@ The rows represent the physical dimension ($M$, $L$, and $T$) and the columns re
 :::
 So the main idea with dimensional analysis is that you can create an equation relating several independent variables and one dependent variable. We can then use Rayleigh's method to ensure that the base units work out. If the units do balance, it provides us a valid framework for understanding the relationship between the variables.
 
-## Task 1: Solve the System
+::::{admonition} Task 1: Solve the System
+:class: exercise
+
 
 Using `numpy.linalg.solve(A, b)`, find the solution to linear system $(1)$.
 
@@ -118,12 +120,15 @@ t = 4 \pi m^x l^y g^z
 ```
 Now look up the equation for the period of a pendulum and see how you did!
 
+::::
+
 ## G. I. Taylor and the Atomic Bomb
 During the early US atomic bomb tests, British physicist named G. I. Taylor saw pictures of the explosion in Time magazine.
 
-|first| |second|
-
-|third| |fourth|
+| | |
+| --- | --- |
+| ![Atomic bomb explosion frame 1](./_static/explosion1.png) | ![Atomic bomb explosion frame 2](./_static/explosion2.png) |
+| ![Atomic bomb explosion frame 3](./_static/explosion3.png) | ![Atomic bomb explosion frame 4](./_static/explosion4.png) |
 
 He used dimensional analysis to figure out the energy yield of the atomic bomb.
 
@@ -147,7 +152,9 @@ Note the physical dimensions of these variables:
 * $[t] = T$
 * $[C]$ no units
 
-## Task 2: Find the Exponents
+::::{admonition} Task 2: Find the Exponents
+:class: exercise
+
 
 Using this information and Rayleigh's method, estimate the values of $x$, $y$, and $z$ for
 
@@ -159,7 +166,12 @@ Use `numpy.round(a, decimals)` to round your answers to 2 decimal places. `a` is
 :::{hint}
 A good first step is to write out this equation with the units of the variables rather than the variables themselves.
 :::
-## Task 3: Estimate the Energy Yield
+
+::::
+
+::::{admonition} Task 3: Estimate the Energy Yield
+:class: exercise
+
 
 With the correct values for $x$, $y$, and $z$, write a function `energy_yield(R, t)` that will estimate the energy yield of the bomb for any given radius `R` and time `t`. Use it to estimate the energy yield of the bomb for all of the pictures shown above. Assume $C=1$. Round your answer to the nearest tenth's place using Python's `round(number, digits)` function.
 
@@ -172,3 +184,5 @@ Your function will take in `R`, the radius of the explosion in meters, and `t`, 
 You need to solve for $E$ in the equation $R = C E^x \rho^y t^z$, not $R$.
 :::
 It is interesting to note that the modern estimated value for the energy yield is around 18 to 20 kilotons of TNT (1 Joule = 2.3901e-13 kilotons of TNT). How close were your estimates?
+
+::::

@@ -57,12 +57,16 @@ Consider the directed network above. It contains 5 nodes, and can be represented
 Notice the 2 in the 4th row, 3rd column, since there are two edges traveling from node 3 to node 2.
 Also, notice that there are no non-zero entries in the last row, which corresponds to the fact that node 4 does not have any edges which start from it.
 
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 Define a function `adj_matrix(edge_matrix)`.
 This function should take a $m \times 2$  `np.array` and return the respective $n \times n$ adjacency matrix.
 Note that because each node is represented by a number between $0$ and $n-1$, use `np.max()` and add 1 to find the size of the adjacency matrix.
 If you are confused on how to set up the adjacency matrix, refer to the notes above.
 
+
+:::
 
 ## PageRank Centrality
 
@@ -170,12 +174,18 @@ and the Power Method becomes $x_{k+1} = Px_k$.
 Therefore, we can generalize the equation to $x_{k} = P^{k}x_0$.
 Like all iterative methods, as we increase the amount of iterations, the iterate becomes more and more accurate.
 
-## Task 2
+:::{admonition} Task 2
+:class: exercise
+
 
 Define a function `stoch_mat(A)` which will take an adjacency matrix `A` and returns the corresponding stochastic matrix.
 You can calculate the stochastic matrix by dividing each row of the matrix by the sum of the row, and then transpose the matrix using `A.T`.
 
-## Task 3
+:::
+
+::::{admonition} Task 3
+:class: exercise
+
 
 Define a function `stoch_eig(P, k)` which takes a `n x n` stochastic matrix `P` and number of iterations `k`
 and returns the dominant eigenvector of `P` after `k` iterations.
@@ -197,17 +207,28 @@ and fills it in with the fill value.
 [4 4 4]]
 ```
 :::
-## Task 4
+
+::::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Define a function `PageRank_cent(edge_matrix, k)` that combines all of your past functions to find the page rank centrality of a network with a given edgematrix and a number of iterations.
 You will first need to take `edge_matrix` and convert it to an adjacency matrix using the `adj_matrix` function.
 Then convert the adjacency matrix to a stochastic matrix using the `stoch_mat` function.
 Finally, use the `stoch_eig` function to return the dominant eigenvector after `k` iterations.
 
-## Task 5
+:::
+
+:::{admonition} Task 5
+:class: exercise
+
 
 Use your recently created `PageRank_cent` to find the index of the most important node of a 499-node network (given in codebuddy).
 You can use `np.argmax()` to find the index of the largest element in an array.
+
+:::
 
 ## Conclusion
 

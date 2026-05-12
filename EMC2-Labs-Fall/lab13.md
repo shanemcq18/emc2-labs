@@ -125,7 +125,9 @@ Linear transformations from $\mathbb{R}^2$ into $\mathbb{R}^2$ can be classified
 ```{image} _static/6turtles.png
 :align: center
 ```
-## Task 1
+:::{admonition} Task 1
+:class: exercise
+
 
 Write a function for each type of linear transformation.
 (`stretch(X, a, b)`, `shear(X, a, b)`, `reflection(X, a, b)`, `rotation(X, theta)`).
@@ -133,6 +135,7 @@ Each function should accept an array to transform and the scalars that define th
 Construct the matrix representation, multiply it with the input array, and return a transformation of the data.
 Make sure to copy the array before transforming it.
 
+:::
 ### Compositions of Linear Transformations
 
 Let $V$, $W$, and $Z$ be finite-dimensional vector spaces.
@@ -140,6 +143,7 @@ If $L:V\rightarrow W$ and $K:W\rightarrow Z$ are linear transformations with mat
 
 For example, if $S$ is a matrix representing a shear and $R$ is a matrix representing a rotation, then $R S$ represents a shear followed by a rotation.
 In fact, any linear transformation $L:\mathbb{R}^2 \rightarrow\mathbb{R}^2$ can be written as a composition of the four transformations.
+
 
 
 ## Affine Transformations
@@ -159,11 +163,15 @@ For example, if $T$ is the translation with $b = [\frac{3}{4}, \frac{1}{2}]^\mat
 Affine transformations include all compositions of stretches, shears, rotations, reflections, and translations.
 For example, if $S$ represents a shear and $R$ a rotation, and if $\mathbf{b}$ is a vector, then $R S \mathbf{x} + \mathbf{b}$ shears, then rotates, then translates $\mathbf{x}$.
 
-## Task 2
+:::{admonition} Task 2
+:class: exercise
+
 
 Write a function `translation(X, b)` that takes in an array `X` and the vector `b` for the translation.
 The function should return the translation of the data.
 
+
+:::
 
 ## Linear Transformations in 3-D
 
@@ -223,7 +231,9 @@ Below is an example of each of the 3 rotations.
 :align: center
 :width: 100%
 ```
-## Task 3
+:::{admonition} Task 3
+:class: exercise
+
 
 Write a function for each 3-D rotation
 (`rotate_xy(X, theta)`, `rotate_yz(X, theta)`, `rotate_xz(X, theta)`).
@@ -231,10 +241,16 @@ Each function should accept an array to transform and the angle $\theta$ for the
 Construct the matrix representation, multiply it with the input array, and return a transformation of the data.
 Make sure to copy the array before transforming it.
 
-## Task 4
+:::
+
+:::{admonition} Task 4
+:class: exercise
+
 
 Take the data points from the Global Hawk aircraft and apply a combination of these 3 rotations so that the plane faces in the direction of the vector `[7, -5, -1]` and save it to the variable `X_rotated`.
 Assume the plane is already facing in the direction of the vector `[1, 0, 0]`.
 Remember that `cos(theta) = u*v / ||u||*||v||`.
 Make sure to round both theta values to 2 decimal places to avoid rounding errors using `round(theta, 2)`.
 (The data will be in the file `plane.csv`.)
+
+:::
